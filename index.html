@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>NOMBA DIGITAL — Agence Web & Solutions Digitales au Bénin</title>
+  <meta name="description" content="Agence web d'élite au Bénin : création de sites vitrines modernes, boutiques e-commerce WhatsApp & Mobile Money, chatbots intelligents et applications sur-mesure pour PME et entreprises.">
+  <meta property="og:title" content="NOMBA DIGITAL — Agence Web & Solutions Digitales au Bénin">
+  <meta property="og:description" content="Création de sites internet professionnels, boutiques en ligne e-commerce, chatbots IA et solutions digitales performantes au Bénin et à l'international.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="theme-color" content="#0B1437">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234318FF'/%3E%3Cstop offset='100%25' stop-color='%2300D2B4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='14' fill='url(%23g)'/%3E%3Cpath d='M15 35V13l18 22V13' stroke='%23ffffff' stroke-width='4.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       HORIZON UI DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      /* Brand Color Palette */
+      --brand-primary: #4318FF;
+      --brand-primary-rgb: 67, 24, 255;
+      --brand-primary-hover: #3311DB;
+      --brand-secondary: #00D2B4;
+      --brand-secondary-rgb: 0, 210, 180;
+      --brand-purple: #7551FF;
+      --brand-emerald: #01B574;
+      --brand-amber: #FFB547;
+      --brand-red: #EE5D50;
+
+      --brand-gradient: linear-gradient(135deg, #4318FF 0%, #00D2B4 100%);
+      --brand-gradient-hover: linear-gradient(135deg, #3311DB 0%, #00bfa3 100%);
+      --brand-gradient-subtle: linear-gradient(135deg, rgba(67, 24, 255, 0.08) 0%, rgba(0, 210, 180, 0.08) 100%);
+
+      /* Light Theme (Horizon Default Light) */
+      --bg-body: #F4F7FE;
+      --bg-card: #FFFFFF;
+      --bg-card-alt: #F8FAFD;
+      --bg-card-hover: #EDF2F7;
+      --bg-header: rgba(255, 255, 255, 0.85);
+      --border-color: #E2E8F0;
+      --border-subtle: rgba(226, 232, 240, 0.7);
+      --border-glow: rgba(67, 24, 255, 0.15);
+
+      --text-heading: #1B2559;
+      --text-body: #475467;
+      --text-muted: #A3AED0;
+      --text-accent: #4318FF;
+
+      --shadow-sm: 0px 4px 12px rgba(112, 144, 176, 0.08);
+      --shadow-card: 0px 18px 40px rgba(112, 144, 176, 0.12);
+      --shadow-card-hover: 0px 24px 48px rgba(112, 144, 176, 0.2);
+      --shadow-btn: 0px 14px 28px rgba(67, 24, 255, 0.25);
+      --shadow-whatsapp: 0px 10px 24px rgba(1, 181, 116, 0.35);
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-full: 9999px;
+
+      color-scheme: light;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Dark Theme (Horizon Navy Pro) */
+    [data-theme="dark"] {
+      --bg-body: #0B1437;
+      --bg-card: #111C44;
+      --bg-card-alt: #1B254B;
+      --bg-card-hover: #222E5D;
+      --bg-header: rgba(11, 20, 55, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-subtle: rgba(255, 255, 255, 0.05);
+      --border-glow: rgba(0, 210, 180, 0.25);
+
+      --text-heading: #FFFFFF;
+      --text-body: #A3AED0;
+      --text-muted: #707EAE;
+      --text-accent: #00D2B4;
+
+      --shadow-sm: 0px 4px 14px rgba(0, 0, 0, 0.25);
+      --shadow-card: 0px 18px 40px rgba(0, 0, 0, 0.45);
+      --shadow-card-hover: 0px 24px 48px rgba(0, 0, 0, 0.6);
+      --shadow-btn: 0px 14px 28px rgba(67, 24, 255, 0.4);
+      --shadow-whatsapp: 0px 10px 24px rgba(1, 181, 116, 0.4);
+
+      color-scheme: dark;
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      position: relative;
+    }
+
+    /* Background Ambient Glows */
+    .ambient-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.15;
+    }
+    .glow-1 {
+      top: -100px;
+      right: -100px;
+      background: radial-gradient(circle, var(--brand-primary), transparent 70%);
+    }
+    .glow-2 {
+      top: 600px;
+      left: -150px;
+      background: radial-gradient(circle, var(--brand-secondary), transparent 70%);
+      opacity: 0.12;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-heading);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--brand-primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: var(--brand-secondary);
+    }
+
+    img, svg {
+      vertical-align: middle;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Gradient Text Highlight */
+    .gradient-text {
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+
+    /* ==========================================================================
+       BUTTONS & BADGES (HORIZON UI STYLE)
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-full);
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn svg {
+      transition: transform 0.2s ease;
+    }
+    .btn:hover svg {
+      transform: translateX(3px);
+    }
+
+    .btn-primary {
+      background: var(--brand-gradient);
+      color: #FFFFFF !important;
+      box-shadow: var(--shadow-btn);
+    }
+    .btn-primary:hover {
+      box-shadow: 0px 18px 36px rgba(67, 24, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-heading) !important;
+      border-color: var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-card-alt);
+      border-color: var(--brand-primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: #01B574;
+      color: #FFFFFF !important;
+      box-shadow: var(--shadow-whatsapp);
+      border-color: transparent;
+    }
+    .btn-whatsapp:hover {
+      background: #009960;
+      transform: translateY(-2px);
+      box-shadow: 0px 14px 30px rgba(1, 181, 116, 0.5);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-heading) !important;
+      border: 1px solid var(--border-color);
+    }
+    .btn-ghost:hover {
+      background: var(--bg-card-alt);
+      border-color: var(--border-glow);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+    .btn-lg {
+      padding: 16px 32px;
+      font-size: 1.05rem;
+      border-radius: var(--radius-full);
+    }
+
+    /* Badges / Horizon Pills */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .badge-primary {
+      background: rgba(67, 24, 255, 0.12);
+      color: var(--brand-primary);
+      border: 1px solid rgba(67, 24, 255, 0.2);
+    }
+    [data-theme="dark"] .badge-primary {
+      background: rgba(117, 81, 255, 0.18);
+      color: #A389FF;
+      border-color: rgba(117, 81, 255, 0.3);
+    }
+    .badge-teal {
+      background: rgba(0, 210, 180, 0.12);
+      color: #00A68F;
+      border: 1px solid rgba(0, 210, 180, 0.25);
+    }
+    [data-theme="dark"] .badge-teal {
+      color: var(--brand-secondary);
+    }
+    .badge-green {
+      background: rgba(1, 181, 116, 0.12);
+      color: #01B574;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 8px currentColor;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION (HORIZON GLASSMORPHISM)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 16px;
+      z-index: 1000;
+      padding: 0 16px;
+      margin-bottom: -16px;
+    }
+    .nav-wrapper {
+      max-width: 1240px;
+      margin: 0 auto;
+      background: var(--bg-header);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-heading);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+    .brand-logo svg {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(67, 24, 255, 0.25);
+    }
+    .brand-logo span b {
+      color: var(--brand-secondary);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-heading);
+      background: var(--bg-card-alt);
+    }
+    [data-theme="dark"] .nav-links a.active {
+      color: #FFFFFF;
+      background: var(--bg-card-alt);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Theme Switcher Button */
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-heading);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .theme-toggle:hover {
+      background: var(--bg-card-alt);
+      transform: rotate(15deg);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-heading);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 16px;
+      right: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      z-index: 999;
+      flex-direction: column;
+      gap: 12px;
+      transform: translateY(-20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-drawer.open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-drawer a {
+      color: var(--text-heading);
+      font-weight: 600;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card-alt);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (HORIZON UI SHOWCASE)
+       ========================================================================== */
+    .hero-section {
+      padding: 100px 0 60px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hero-content h1 {
+      font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+    .hero-content p.hero-lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+      color: var(--text-body);
+      max-width: 620px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+    .trust-avatars {
+      display: flex;
+      align-items: center;
+    }
+    .trust-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--bg-card);
+      margin-left: -10px;
+      background: var(--brand-gradient);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .trust-avatar:first-child { margin-left: 0; }
+    .trust-text {
+      font-size: 0.88rem;
+      color: var(--text-body);
+    }
+    .trust-text strong {
+      color: var(--text-heading);
+    }
+
+    /* HORIZON LIVE SHOWCASE CARD (HIGH-TECH DASHBOARD MOCKUP) */
+    .hero-showcase {
+      position: relative;
+    }
+    .showcase-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .showcase-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      border-color: var(--border-glow);
+    }
+
+    /* Window Header Bar */
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .mockup-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #EE5D50; }
+    .dot-yellow { background: #FFB547; }
+    .dot-green { background: #01B574; }
+
+    .mockup-address {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 4px 14px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+
+    /* Mini Horizon Stat Badges Grid */
+    .mockup-kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .mockup-kpi {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: relative;
+    }
+    .mockup-kpi-val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .trend-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      background: rgba(1, 181, 116, 0.15);
+      color: #01B574;
+    }
+    .mockup-kpi-lbl {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Interactive Live Chart Bars */
+    .mockup-chart-box {
+      background: var(--bg-card-alt);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .chart-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 90px;
+      gap: 8px;
+      padding-top: 10px;
+    }
+    .bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      height: 100%;
+      justify-content: flex-end;
+    }
+    .bar {
+      width: 100%;
+      max-width: 24px;
+      background: var(--brand-primary);
+      border-radius: 6px 6px 2px 2px;
+      transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+      cursor: pointer;
+      position: relative;
+    }
+    .bar:hover {
+      background: var(--brand-secondary);
+    }
+    .bar::after {
+      content: attr(data-val);
+      position: absolute;
+      top: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2px 6px;
+      border-radius: 4px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+    }
+    .bar:hover::after {
+      opacity: 1;
+    }
+    .bar-lbl {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Live Feed Pill */
+    .mockup-feed {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(1, 181, 116, 0.08);
+      border: 1px solid rgba(1, 181, 116, 0.2);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      color: var(--text-heading);
+    }
+    .feed-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #01B574;
+      box-shadow: 0 0 10px #01B574;
+      flex-shrink: 0;
+    }
+
+    /* Floating Showcase Badge */
+    .floating-card-pill {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 10px 18px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ==========================================================================
+       HORIZON STATS BAR (METRICS)
+       ========================================================================== */
+    .stats-section {
+      padding: 40px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--border-glow);
+    }
+    .stat-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-primary);
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .stat-icon {
+      color: var(--brand-secondary);
+    }
+    .stat-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* ==========================================================================
+       SECTION COMMON STYLES
+       ========================================================================== */
+    .section {
+      padding: 90px 0;
+      position: relative;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight: 800;
+    }
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-body);
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION (HORIZON BENTO GRID)
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--brand-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--border-glow);
+    }
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-primary);
+      border: 1px solid var(--border-subtle);
+    }
+    [data-theme="dark"] .service-icon-box {
+      color: var(--brand-secondary);
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    .service-card p.service-desc {
+      font-size: 0.94rem;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    .service-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 8px 0;
+    }
+    .service-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+    }
+    .service-features li svg {
+      width: 18px;
+      height: 18px;
+      color: #01B574;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .service-benefit {
+      margin-top: auto;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: var(--text-heading);
+    }
+    .service-benefit strong {
+      color: var(--brand-secondary);
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .service-action {
+      margin-top: 14px;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE DEVIS & COST ESTIMATOR (EXCLUSIVE UX TECHNOLOGY)
+       ========================================================================== */
+    .simulator-section {
+      background: var(--bg-card-alt);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .simulator-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    .sim-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sim-step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* Project Type Selector */
+    .project-types-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .project-type-card {
+      background: var(--bg-card-alt);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .project-type-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-2px);
+    }
+    .project-type-card.selected {
+      border-color: var(--brand-primary);
+      background: rgba(67, 24, 255, 0.06);
+    }
+    [data-theme="dark"] .project-type-card.selected {
+      background: rgba(67, 24, 255, 0.18);
+      border-color: #7551FF;
+    }
+    .project-type-card .pt-name {
+      font-weight: 700;
+      color: var(--text-heading);
+      font-size: 1rem;
+    }
+    .project-type-card .pt-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .project-type-card .pt-price {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--brand-secondary);
+      margin-top: 4px;
+    }
+
+    /* Options Checkbox Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .option-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .option-item:hover {
+      border-color: var(--brand-secondary);
+    }
+    .option-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .custom-checkbox {
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      background: var(--bg-card);
+    }
+    .option-item input {
+      display: none;
+    }
+    .option-item input:checked + .option-left .custom-checkbox {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+    }
+    .option-item input:checked + .option-left .custom-checkbox svg {
+      display: block;
+    }
+    .custom-checkbox svg {
+      display: none;
+      width: 14px;
+      height: 14px;
+      color: #fff;
+    }
+    .option-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .option-name {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text-heading);
+    }
+    .option-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .option-price-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    /* Delay Selector */
+    .delay-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .delay-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .delay-card.selected {
+      border-color: var(--brand-primary);
+      background: rgba(67, 24, 255, 0.08);
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    /* Estimation Summary Card (Sticky) */
+    .sim-summary-card {
+      position: sticky;
+      top: 100px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sim-summary-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 14px;
+    }
+    .summary-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-body);
+    }
+    .summary-item.total-row {
+      margin-top: 10px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-color);
+      align-items: baseline;
+    }
+
+    .price-box {
+      text-align: right;
+    }
+    .total-price-val {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      letter-spacing: -0.02em;
+    }
+    .total-price-eur {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .delay-estimate-pill {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-heading);
+    }
+
+    /* ==========================================================================
+       PORTFOLIO & REALISATIONS SECTION
+       ========================================================================== */
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .filter-btn:hover {
+      background: var(--bg-card-alt);
+      color: var(--text-heading);
+      transform: translateY(-2px);
+    }
+    .filter-btn.active {
+      background: var(--brand-primary);
+      color: #fff;
+      border-color: var(--brand-primary);
+      box-shadow: 0 4px 14px rgba(67, 24, 255, 0.3);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--border-glow);
+    }
+
+    .project-mockup-frame {
+      background: var(--bg-card-alt);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .project-frame-dots {
+      display: flex;
+      gap: 5px;
+    }
+    .project-frame-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .p-red { background: #EE5D50; }
+    .p-yellow { background: #FFB547; }
+    .p-green { background: #01B574; }
+    .project-frame-url {
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .project-banner {
+      height: 180px;
+      background: linear-gradient(135deg, #111C44 0%, #1A202C 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-banner svg.bg-watermark {
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      width: 140px;
+      height: 140px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .project-banner h4 {
+      font-size: 1.3rem;
+      color: #FFFFFF;
+      font-weight: 800;
+      z-index: 1;
+    }
+    .project-banner span {
+      font-size: 0.82rem;
+      color: var(--brand-secondary);
+      font-weight: 600;
+      margin-top: 4px;
+      z-index: 1;
+    }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+    .project-category-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    [data-theme="dark"] .project-category-tag {
+      color: var(--brand-secondary);
+    }
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-body);
+    }
+    .project-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .project-features li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .project-features li svg {
+      width: 14px;
+      height: 14px;
+      color: #01B574;
+    }
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* ==========================================================================
+       POURQUOI NOMBA DIGITAL (AVANTAGES HORIZON)
+       ========================================================================== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--border-glow);
+    }
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-primary);
+      border: 1px solid var(--border-subtle);
+    }
+    [data-theme="dark"] .feature-icon {
+      color: var(--brand-secondary);
+    }
+    .feature-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       FOUNDER PROFILE (HORIZON EXECUTIVE PROFILE CARD)
+       ========================================================================== */
+    .founder-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .founder-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .founder-avatar-wrap {
+      width: 190px;
+      height: 190px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #4318FF 0%, #111C44 100%);
+      border: 4px solid var(--bg-card-alt);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .founder-avatar-wrap svg {
+      width: 100px;
+      height: 100px;
+      color: #FFFFFF;
+    }
+    .online-indicator {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: #01B574;
+      border: 3px solid var(--bg-card);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .founder-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-heading);
+    }
+    .founder-role {
+      font-size: 0.85rem;
+      color: var(--brand-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    [data-theme="dark"] .founder-role {
+      color: var(--brand-secondary);
+    }
+
+    .founder-bio {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .founder-bio h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+    .founder-bio p {
+      font-size: 0.98rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .founder-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .skill-pill {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+
+    /* ==========================================================================
+       FAQ ACCORDION (HORIZON SMOOTH DROPDOWN)
+       ========================================================================== */
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .faq-item:hover {
+      border-color: var(--border-glow);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 22px 28px;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bg-card-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-primary);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .faq-icon {
+      color: var(--brand-secondary);
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      background: var(--brand-primary);
+      color: #fff;
+    }
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+      color: var(--text-body);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .faq-answer-inner {
+      overflow: hidden;
+      padding: 0 28px 24px;
+    }
+    .faq-item.active .faq-answer {
+      grid-template-rows: 1fr;
+    }
+
+    /* ==========================================================================
+       CONTACT SECTION
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+    }
+    .contact-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .contact-info-card h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .channel-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .channel-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-primary);
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .channel-icon {
+      color: var(--brand-secondary);
+    }
+    .channel-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .channel-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .channel-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    .contact-form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-full {
+      grid-column: 1 / -1;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-heading);
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--brand-primary);
+      box-shadow: 0 0 0 3px rgba(67, 24, 255, 0.15);
+      background: var(--bg-card);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--text-body);
+      cursor: pointer;
+    }
+    .checkbox-label input {
+      margin-top: 3px;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      padding: 70px 0 30px;
+      margin-top: 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--text-body);
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+    .footer-links a:hover {
+      color: var(--brand-primary);
+      padding-left: 4px;
+    }
+    [data-theme="dark"] .footer-links a:hover {
+      color: var(--brand-secondary);
+    }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       FLOATING WHATSAPP & TOAST NOTIFICATION
+       ========================================================================== */
+    .fab-whatsapp {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 990;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background: #01B574;
+      color: #fff !important;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 25px rgba(1, 181, 116, 0.45);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .fab-whatsapp:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 14px 32px rgba(1, 181, 116, 0.6);
+    }
+    .fab-pulse-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: var(--radius-full);
+      border: 2px solid #01B574;
+      animation: fab-pulse 2s infinite;
+      pointer-events: none;
+    }
+    @keyframes fab-pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.2); opacity: 0; }
+    }
+
+    /* Toast Alert */
+    .toast-box {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      color: var(--text-heading);
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-card);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .toast-box.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ==========================================================================
+       MODAL DIALOG (LEGAL PAGES & DEMOS)
+       ========================================================================== */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 20, 55, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      max-width: 720px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 36px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card-alt);
+      color: var(--text-heading);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .services-grid, .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .simulator-grid {
+        grid-template-columns: 1fr;
+      }
+      .founder-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 32px;
+      }
+      .founder-media {
+        margin: 0 auto;
+      }
+      .founder-skills {
+        justify-content: center;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links, .nav-actions .btn {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .services-grid, .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-types-grid {
+        grid-template-columns: 1fr;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .fab-whatsapp span {
+        display: none;
+      }
+      .fab-whatsapp {
+        padding: 14px;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Ambient Glow Effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- ==========================================================================
+       HORIZON UI FLOATING NAVBAR
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="nav-wrapper">
+      <a href="#accueil" class="brand-logo" aria-label="Accueil NOMBA DIGITAL">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4318FF"/>
+              <stop offset="100%" stop-color="#00D2B4"/>
+            </linearGradient>
+          </defs>
+          <rect width="48" height="48" rx="14" fill="url(#logoGrad)"/>
+          <path d="M15 35V13l18 22V13" stroke="#FFFFFF" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>NOMBA <b>DIGITAL</b></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#accueil" class="active">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#simulateur">Simulateur</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#avantages">Pourquoi Nous</a>
+        <a href="#fondateur">Fondateur</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Basculer le mode sombre/clair">
+          <svg id="moonIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sunIcon" style="display:none;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="#simulateur" class="btn btn-primary btn-sm">
+          <span>Estimer mon devis</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#accueil" class="mobile-link">Accueil <span>→</span></a>
+      <a href="#services" class="mobile-link">Services <span>→</span></a>
+      <a href="#simulateur" class="mobile-link">Simulateur de Devis <span>→</span></a>
+      <a href="#realisations" class="mobile-link">Réalisations <span>→</span></a>
+      <a href="#avantages" class="mobile-link">Pourquoi NOMBA DIGITAL <span>→</span></a>
+      <a href="#fondateur" class="mobile-link">À propos du Fondateur <span>→</span></a>
+      <a href="#faq" class="mobile-link">FAQ <span>→</span></a>
+      <a href="#contact" class="mobile-link">Contact <span>→</span></a>
+      <div style="display:flex; gap:10px; margin-top:8px;">
+        <a href="#simulateur" class="btn btn-primary" style="flex:1;">Demander un devis</a>
+        <a href="https://wa.me/2290161631431" target="_blank" class="btn btn-whatsapp" style="flex:1;">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <main id="main">
+    <section class="hero-section" id="accueil">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Text Content -->
+          <div class="hero-content">
+            <div class="badge badge-primary">
+              <span class="badge-dot"></span>
+              <span>L'Agence Digitale Nouvelle Génération au Bénin</span>
+            </div>
+
+            <h1>
+              Propulsez votre entreprise avec un
+              <span class="gradient-text">site web d'élite</span>.
+            </h1>
+
+            <p class="hero-lead">
+              Sites vitrines percutants, boutiques e-commerce connectées à WhatsApp & Mobile Money, et chatbots IA conçus pour <strong>attirer des prospects qualifiés et maximiser vos ventes</strong> au Bénin comme à l'international.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#simulateur" class="btn btn-primary btn-lg">
+                <span>Calculer mon devis en 1 min</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://wa.me/2290161631431?text=Bonjour%20NOMBA%20DIGITAL%2C%20je%20souhaite%20discuter%20d%27un%20projet%20web" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.17c-.24.68-1.4 1.28-1.94 1.34-.51.06-1.18.09-3.41-.83-2.68-1.1-4.41-3.83-4.54-4-.14-.18-1.09-1.45-1.09-2.76 0-1.31.69-1.95.93-2.22.25-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.39-.06.61.47.23.54.78 1.9.85 2.04.07.14.12.3.02.48-.09.18-.14.3-.28.47-.14.16-.3.37-.43.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.6 1.98 1.1 1 2.03 1.31 2.31 1.45.28.14.45.12.62-.07.17-.18.73-.85.92-1.15.19-.3.38-.25.64-.15.26.1 1.66.78 1.95.92.28.14.47.21.54.33.07.12.07.72-.17 1.4z"/></svg>
+                <span>WhatsApp Direct</span>
+              </a>
+              <a href="#realisations" class="btn btn-ghost btn-lg">
+                <span>Voir nos réalisations</span>
+              </a>
+            </div>
+
+            <!-- Trust proof points -->
+            <div class="hero-trust">
+              <div class="trust-avatars">
+                <div class="trust-avatar">MD</div>
+                <div class="trust-avatar">SP</div>
+                <div class="trust-avatar">GG</div>
+                <div class="trust-avatar">+</div>
+              </div>
+              <div class="trust-text">
+                <strong>Plus de 100% de satisfaction</strong> sur nos projets livrés clé en main au Bénin.
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Horizon Showcase (Live Mockup Card) -->
+          <div class="hero-showcase">
+            <div class="showcase-card">
+              <!-- Mockup Browser Header -->
+              <div class="mockup-header">
+                <div class="mockup-dots">
+                  <span class="mockup-dot dot-red"></span>
+                  <span class="mockup-dot dot-yellow"></span>
+                  <span class="mockup-dot dot-green"></span>
+                </div>
+                <div class="mockup-address">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>nomba-digital.bj/dashboard</span>
+                </div>
+                <div class="badge badge-teal" style="font-size:0.7rem; padding:2px 8px;">
+                  <span>En Direct</span>
+                </div>
+              </div>
+
+              <!-- KPI Metrics -->
+              <div class="mockup-kpi-grid">
+                <div class="mockup-kpi">
+                  <div class="mockup-kpi-val">
+                    <span>+315%</span>
+                    <span class="trend-pill">↑ 28.4%</span>
+                  </div>
+                  <span class="mockup-kpi-lbl">Croissance Trafic Web</span>
+                </div>
+                <div class="mockup-kpi">
+                  <div class="mockup-kpi-val">
+                    <span>0.8s</span>
+                    <span class="trend-pill">Score A+</span>
+                  </div>
+                  <span class="mockup-kpi-lbl">Vitesse Core Web Vitals</span>
+                </div>
+              </div>
+
+              <!-- Interactive Chart (Horizon UI Chart) -->
+              <div class="mockup-chart-box">
+                <div class="chart-header">
+                  <span class="chart-title">Visiteurs & Demandes WhatsApp (7 derniers jours)</span>
+                  <span class="badge badge-green" style="font-size:0.68rem;">+48 Leads</span>
+                </div>
+                <div class="chart-bars">
+                  <div class="bar-col">
+                    <div class="bar" style="height: 45%;" data-val="28"></div>
+                    <span class="bar-lbl">Lun</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar" style="height: 60%;" data-val="38"></div>
+                    <span class="bar-lbl">Mar</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar" style="height: 52%;" data-val="32"></div>
+                    <span class="bar-lbl">Mer</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar" style="height: 75%;" data-val="46"></div>
+                    <span class="bar-lbl">Jeu</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar" style="height: 88%;" data-val="54"></div>
+                    <span class="bar-lbl">Ven</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar" style="height: 96%; background: var(--brand-secondary);" data-val="68"></div>
+                    <span class="bar-lbl">Sam</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar" style="height: 70%;" data-val="42"></div>
+                    <span class="bar-lbl">Dim</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live WhatsApp order feed -->
+              <div class="mockup-feed">
+                <span class="feed-pulse"></span>
+                <span>🛍️ <strong>Marcx-Dressing</strong> : Nouvelle commande WhatsApp reçue il y a 3 min</span>
+              </div>
+            </div>
+
+            <!-- Floating Pill -->
+            <div class="floating-card-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#01B574" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% Adapté Mobile Money</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HORIZON STATS BAR
+         ========================================================================== -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Projets Clé en Main</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">x2.8</span>
+              <span class="stat-label">Taux de Conversion Client</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">&lt; 14j</span>
+              <span class="stat-label">Délai Moyen de Livraison</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Assistance & Automatisation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES SECTION (HORIZON BENTO GRID)
+         ========================================================================== */
+    -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-teal">Solutions Digitales Métiers</div>
+          <h2>Des expertises de pointe pour faire grandir votre chiffre d'affaires</h2>
+          <p>Chaque entreprise est unique. Nous concevons des outils sur-mesure, rapides, élégants et optimisés pour générer des résultats concrets.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Service 1 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3>Création de Sites Web & Vitrines</h3>
+            <p class="service-desc">Sites vitrines institutionnels, landing pages de haute conversion et refonte moderne de sites obsolètes pour asseoir votre crédibilité.</p>
+            <ul class="service-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Design sur-mesure adapté à votre identité</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 100% Mobile First & chargement ultra-rapide</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Landing pages optimisées pour convertir</li>
+            </ul>
+            <div class="service-benefit">
+              <strong>Bénéfice clé :</strong>
+              Une image prestigieuse qui inspire confiance dès les 3 premières secondes.
+            </div>
+            <div class="service-action">
+              <a href="#simulateur" class="btn btn-secondary btn-sm" onclick="selectSimType('vitrine')">Estimer ce service →</a>
+            </div>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </div>
+            <h3>Boutiques E-commerce & WhatsApp</h3>
+            <p class="service-desc">Vendez vos produits 24h/24 avec des catalogues clairs, des paniers fluides et des commandes directes acheminées sur WhatsApp et Mobile Money.</p>
+            <ul class="service-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Catalogue produits avec filtres & catégories</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Envoi du panier directement sur WhatsApp</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Paiements MTN / Moov Money / Cartes</li>
+            </ul>
+            <div class="service-benefit">
+              <strong>Bénéfice clé :</strong>
+              Multipliez vos ventes sans friction, même lorsque vous dormez.
+            </div>
+            <div class="service-action">
+              <a href="#simulateur" class="btn btn-secondary btn-sm" onclick="selectSimType('ecommerce')">Estimer ce service →</a>
+            </div>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>
+            </div>
+            <h3>Chatbots IA & Automatisation 24/7</h3>
+            <p class="service-desc">Répondez instantanément aux questions récurrentes de vos prospects, qualifiez vos leads et automatisez vos processus de vente.</p>
+            <ul class="service-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Réponses automatiques aux questions fréquentes</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Prise de rendez-vous & collecte de coordonnées</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Intégration WhatsApp Business & messagerie</li>
+            </ul>
+            <div class="service-benefit">
+              <strong>Bénéfice clé :</strong>
+              Zéro prospect perdu et des heures précieuses gagnées au quotidien.
+            </div>
+            <div class="service-action">
+              <a href="#simulateur" class="btn btn-secondary btn-sm" onclick="selectSimType('chatbot')">Estimer ce service →</a>
+            </div>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <h3>SEO & Référencement Google au Bénin</h3>
+            <p class="service-desc">Positionnez votre entreprise en tête des résultats de recherche Google lorsque vos futurs clients recherchent vos services à Cotonou ou ailleurs.</p>
+            <ul class="service-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Optimisation SEO on-page & structure balises</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Référencement local Google Maps & fiche entreprise</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Indexation rapide sur Google Search Console</li>
+            </ul>
+            <div class="service-benefit">
+              <strong>Bénéfice clé :</strong>
+              Soyez trouvé facilement avant vos concurrents directs.
+            </div>
+            <div class="service-action">
+              <a href="#simulateur" class="btn btn-secondary btn-sm" onclick="selectSimType('vitrine')">Estimer ce service →</a>
+            </div>
+          </article>
+
+          <!-- Service 5 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3>Applications Web & Gestion sur-mesure</h3>
+            <p class="service-desc">Applications métiers personnalisées pour piloter vos stocks, vos ventes, vos clients et vos commandes avec des tableaux de bord interactifs.</p>
+            <ul class="service-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Gestion commerciale complète (SCMS)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suivi des stocks, alertes & inventaires</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Rôles utilisateurs & sécurisation des données</li>
+            </ul>
+            <div class="service-benefit">
+              <strong>Bénéfice clé :</strong>
+              Une gestion sans faille et une vue claire sur votre rentabilité.
+            </div>
+            <div class="service-action">
+              <a href="#simulateur" class="btn btn-secondary btn-sm" onclick="selectSimType('app')">Estimer ce service →</a>
+            </div>
+          </article>
+
+          <!-- Service 6 -->
+          <article class="service-card">
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <h3>Maintenance, Hébergement & Sécurité</h3>
+            <p class="service-desc">Gardez l'esprit tranquille : nous gérons la sécurité SSL/HTTPS, les sauvegardes régulières, les noms de domaine et les mises à jour techniques.</p>
+            <ul class="service-features">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Configuration domaine .bj / .com avec certificat SSL</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sauvegardes cloud automatiques</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Support technique rapide en cas d'urgence</li>
+            </ul>
+            <div class="service-benefit">
+              <strong>Bénéfice clé :</strong>
+              Votre site reste opérationnel, fluide et protégé 365 jours par an.
+            </div>
+            <div class="service-action">
+              <a href="#simulateur" class="btn btn-secondary btn-sm" onclick="selectSimType('vitrine')">Estimer ce service →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE DEVIS & COST ESTIMATOR (EXCLUSIVE UX TECHNOLOGY)
+         ========================================================================== -->
+    <section class="section simulator-section" id="simulateur">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-primary">Technologie Interactive UX</div>
+          <h2>Simulateur de Devis Instantané</h2>
+          <p>Personnalisez les options de votre projet et obtenez une estimation transparente en temps réel, prête à être transmise sur WhatsApp ou par e-mail en 1 clic.</p>
+        </div>
+
+        <div class="simulator-grid">
+          
+          <!-- Configuration Card -->
+          <div class="sim-card">
+            
+            <!-- Step 1: Project Type -->
+            <div class="sim-step-title">
+              <span class="step-num">1</span>
+              <span>Sélectionnez votre type de projet</span>
+            </div>
+
+            <div class="project-types-grid">
+              <div class="project-type-card selected" data-type="vitrine" data-base="100000" data-delay="10">
+                <span class="pt-name">🌐 Site Vitrine Pro</span>
+                <span class="pt-desc">Idéal pour artisans, commerces, PME et institutions.</span>
+                <span class="pt-price">Dès 100 000 FCFA</span>
+              </div>
+              <div class="project-type-card" data-type="ecommerce" data-base="180000" data-delay="15">
+                <span class="pt-name">🛒 Boutique E-commerce</span>
+                <span class="pt-desc">Catalogue, panier WhatsApp & paiements en ligne.</span>
+                <span class="pt-price">Dès 180 000 FCFA</span>
+              </div>
+              <div class="project-type-card" data-type="chatbot" data-base="90000" data-delay="8">
+                <span class="pt-name">🤖 Chatbot & Automatisation</span>
+                <span class="pt-desc">Assistant intelligent connecté pour vos clients.</span>
+                <span class="pt-price">Dès 90 000 FCFA</span>
+              </div>
+              <div class="project-type-card" data-type="app" data-base="260000" data-delay="20">
+                <span class="pt-name">⚙️ Application sur-mesure</span>
+                <span class="pt-desc">Gestion commerciale, CRM, gestion de stocks.</span>
+                <span class="pt-price">Dès 260 000 FCFA</span>
+              </div>
+            </div>
+
+            <!-- Step 2: Addon Options -->
+            <div class="sim-step-title">
+              <span class="step-num">2</span>
+              <span>Choisissez vos options indispensables</span>
+            </div>
+
+            <div class="options-grid">
+              <label class="option-item">
+                <input type="checkbox" name="sim_opt" value="momo" data-cost="35000" checked>
+                <div class="option-left">
+                  <div class="custom-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div class="option-info">
+                    <span class="option-name">Intégration Mobile Money & Cartes</span>
+                    <span class="option-sub">Acceptez MTN, Moov, Wave et cartes bancaires</span>
+                  </div>
+                </div>
+                <span class="option-price-tag">+35 000 F</span>
+              </label>
+
+              <label class="option-item">
+                <input type="checkbox" name="sim_opt" value="seo" data-cost="25000" checked>
+                <div class="option-left">
+                  <div class="custom-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div class="option-info">
+                    <span class="option-name">Pack Référencement Google SEO Pro</span>
+                    <span class="option-sub">Indexation prioritaire et optimisation mots-clés Bénin</span>
+                  </div>
+                </div>
+                <span class="option-price-tag">+25 000 F</span>
+              </label>
+
+              <label class="option-item">
+                <input type="checkbox" name="sim_opt" value="host" data-cost="30000" checked>
+                <div class="option-left">
+                  <div class="custom-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div class="option-info">
+                    <span class="option-name">Nom de domaine (.com ou .bj) + Hébergement Cloud 1 An</span>
+                    <span class="option-sub">Certificat SSL sécurisé, e-mails pro & mise en ligne</span>
+                  </div>
+                </div>
+                <span class="option-price-tag">+30 000 F</span>
+              </label>
+
+              <label class="option-item">
+                <input type="checkbox" name="sim_opt" value="training" data-cost="20000">
+                <div class="option-left">
+                  <div class="custom-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div class="option-info">
+                    <span class="option-name">Formation vidéo & Guide d'administration</span>
+                    <span class="option-sub">Apprenez à modifier vos contenus et ajouter vos produits facilement</span>
+                  </div>
+                </div>
+                <span class="option-price-tag">+20 000 F</span>
+              </label>
+
+              <label class="option-item">
+                <input type="checkbox" name="sim_opt" value="maint" data-cost="40000">
+                <div class="option-left">
+                  <div class="custom-checkbox">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div class="option-info">
+                    <span class="option-name">Garantie & Support prioritaire 3 mois</span>
+                    <span class="option-sub">Mises à jour régulières, sauvegardes et dépannage express</span>
+                  </div>
+                </div>
+                <span class="option-price-tag">+40 000 F</span>
+              </label>
+            </div>
+
+            <!-- Step 3: Delivery Speed -->
+            <div class="sim-step-title">
+              <span class="step-num">3</span>
+              <span>Délai de réalisation souhaité</span>
+            </div>
+
+            <div class="delay-grid">
+              <div class="delay-card selected" data-speed="standard" data-mult="1">
+                <div style="font-size:0.95rem; font-weight:700;">Standard (Recommandé)</div>
+                <div style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">Délai optimal sans surcoût</div>
+              </div>
+              <div class="delay-card" data-speed="express" data-mult="1.25">
+                <div style="font-size:0.95rem; font-weight:700;">⚡ Express Prioritaire</div>
+                <div style="font-size:0.78rem; color:var(--brand-primary); margin-top:2px;">Livraison 2x plus rapide (+25%)</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Live Summary Card (Sticky) -->
+          <div class="sim-summary-card">
+            <h3 class="sim-summary-title">Votre Devis Estimatif</h3>
+            
+            <div class="summary-list">
+              <div class="summary-item">
+                <span>Type de projet :</span>
+                <strong id="sumProjectName">Site Vitrine Pro</strong>
+              </div>
+              <div class="summary-item">
+                <span>Options incluses :</span>
+                <strong id="sumOptionsCount">3 sélectionnées</strong>
+              </div>
+              <div class="summary-item">
+                <span>Rythme de réalisation :</span>
+                <strong id="sumDelayType">Standard</strong>
+              </div>
+              
+              <div class="delay-estimate-pill">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Délai estimé : <strong id="sumDays">10 à 14 jours ouvrés</strong></span>
+              </div>
+
+              <div class="summary-item total-row">
+                <div>
+                  <div style="font-weight:700; color:var(--text-heading); font-size:1rem;">Estimation globale</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">Cahier des charges sur-mesure</div>
+                </div>
+                <div class="price-box">
+                  <div class="total-price-val" id="sumPriceFcfa">190 000 FCFA</div>
+                  <div class="total-price-eur" id="sumPriceEur">~ 290 EUR</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action buttons for devis -->
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <button class="btn btn-whatsapp btn-lg" id="btnSendWhatsApp" style="width:100%;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.17c-.24.68-1.4 1.28-1.94 1.34-.51.06-1.18.09-3.41-.83-2.68-1.1-4.41-3.83-4.54-4-.14-.18-1.09-1.45-1.09-2.76 0-1.31.69-1.95.93-2.22.25-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.39-.06.61.47.23.54.78 1.9.85 2.04.07.14.12.3.02.48-.09.18-.14.3-.28.47-.14.16-.3.37-.43.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.6 1.98 1.1 1 2.03 1.31 2.31 1.45.28.14.45.12.62-.07.17-.18.73-.85.92-1.15.19-.3.38-.25.64-.15.26.1 1.66.78 1.95.92.28.14.47.21.54.33.07.12.07.72-.17 1.4z"/></svg>
+                <span>Valider & Envoyer sur WhatsApp</span>
+              </button>
+
+              <button class="btn btn-secondary" id="btnSendEmail" style="width:100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span>Transmettre par e-mail</span>
+              </button>
+            </div>
+
+            <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin:0;">
+              🔒 Devis sans engagement. Nous affinons ensemble vos besoins avant tout démarrage.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PORTFOLIO & REALISATIONS SECTION
+         ========================================================================== -->
+    <section class="section" id="realisations">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-teal">Portfolio & Réalisations</div>
+          <h2>Des solutions conçues avec passion et rigueur</h2>
+          <p>Découvrez un aperçu concret de nos réalisations : boutiques e-commerce, vitrines d'exception et applications de gestion commerciale.</p>
+        </div>
+
+        <!-- Filter Segmented Tabs -->
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Tous les projets</button>
+          <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+          <button class="filter-btn" data-filter="vitrine">Sites vitrines</button>
+          <button class="filter-btn" data-filter="app">Applications & Gestion</button>
+          <button class="filter-btn" data-filter="chatbot">Chatbots</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioContainer">
+          
+          <!-- Project 1: Marcx-Dressing -->
+          <article class="project-card" data-category="ecommerce">
+            <div class="project-mockup-frame">
+              <div class="project-frame-dots">
+                <span class="project-frame-dot p-red"></span>
+                <span class="project-frame-dot p-yellow"></span>
+                <span class="project-frame-dot p-green"></span>
+              </div>
+              <span class="project-frame-url">marcx-dressing.store</span>
+            </div>
+            <div class="project-banner">
+              <svg class="bg-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
+              <h4>Marcx-Dressing</h4>
+              <span>Boutique de Mode & Prêt-à-porter</span>
+            </div>
+            <div class="project-body">
+              <span class="project-category-tag">E-commerce • Vente en ligne</span>
+              <h3 class="project-title">Boutique de Mode avec Commande WhatsApp</h3>
+              <p class="project-desc">Plateforme e-commerce moderne permettant aux clients de parcourir les collections de vêtements, de composer leur panier et de finaliser instantanément la commande sur WhatsApp.</p>
+              <ul class="project-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Catalogue produits haute résolution</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Panier d'achat interactif & instantané</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Transmission directe du récapitulatif sur WhatsApp</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://nomba-albouchra.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="flex:1;">Voir dans le portfolio</a>
+                <a href="https://wa.me/2290161631431?text=Bonjour%20NOMBA%20DIGITAL%2C%20je%20souhaite%20un%20projet%20e-commerce%20comme%20Marcx-Dressing" target="_blank" class="btn btn-whatsapp btn-sm">Commander</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Smoke Paradise -->
+          <article class="project-card" data-category="vitrine ecommerce">
+            <div class="project-mockup-frame">
+              <div class="project-frame-dots">
+                <span class="project-frame-dot p-red"></span>
+                <span class="project-frame-dot p-yellow"></span>
+                <span class="project-frame-dot p-green"></span>
+              </div>
+              <span class="project-frame-url">smoke-paradise.bj</span>
+            </div>
+            <div class="project-banner" style="background: linear-gradient(135deg, #1B254B 0%, #0F4A52 100%);">
+              <svg class="bg-watermark" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <h4>Smoke Paradise</h4>
+              <span>Catalogue & Présentation Haut de Gamme</span>
+            </div>
+            <div class="project-body">
+              <span class="project-category-tag">Site Vitrine & E-commerce</span>
+              <h3 class="project-title">Site Vitrine & Catalogue Produits</h3>
+              <p class="project-desc">Conception d'une présence digitale raffinée et élégante, mettant en valeur des produits haut de gamme avec tarification claire et prise de contact simplifiée.</p>
+              <ul class="project-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Design sombre & épuré haut de gamme</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Présentation des spécifications produits</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Optimisation SEO locale avancée</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://nomba-albouchra.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="flex:1;">Voir dans le portfolio</a>
+                <a href="https://wa.me/2290161631431?text=Bonjour%20NOMBA%20DIGITAL%2C%20je%20souhaite%20un%20site%20vitrine%20comme%20Smoke%20Paradise" target="_blank" class="btn btn-whatsapp btn-sm">Commander</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: GlobalGest SCMS -->
+          <article class="project-card" data-category="app">
+            <div class="project-mockup-frame">
+              <div class="project-frame-dots">
+                <span class="project-frame-dot p-red"></span>
+                <span class="project-frame-dot p-yellow"></span>
+                <span class="project-frame-dot p-green"></span>
+              </div>
+              <span class="project-frame-url">app.globalgest-scms.com</span>
+            </div>
+            <div class="project-banner" style="background: linear-gradient(135deg, #4318FF 0%, #111C44 100%);">
+              <svg class="bg-watermark" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <h4>GlobalGest SCMS</h4>
+              <span>ERP & Suivi Commercial</span>
+            </div>
+            <div class="project-body">
+              <span class="project-category-tag">Solution Métier • Web App</span>
+              <h3 class="project-title">Application Web de Gestion Commerciale</h3>
+              <p class="project-desc">Plateforme robuste de gestion des stocks, achats et ventes conçue pour les commerçants et PME afin de supprimer les erreurs manuelles et d'accélérer la rentabilité.</p>
+              <ul class="project-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suivi dynamique des stocks en temps réel</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Édition de factures, bons de commande & reçus</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Tableaux de bord financiers & bénéfices</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://nomba-albouchra.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="flex:1;">Voir dans le portfolio</a>
+                <a href="https://wa.me/2290161631431?text=Bonjour%20NOMBA%20DIGITAL%2C%20je%20souhaite%20une%20application%20comme%20GlobalGest" target="_blank" class="btn btn-whatsapp btn-sm">Commander</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Nomba AI Assistant -->
+          <article class="project-card" data-category="chatbot">
+            <div class="project-mockup-frame">
+              <div class="project-frame-dots">
+                <span class="project-frame-dot p-red"></span>
+                <span class="project-frame-dot p-yellow"></span>
+                <span class="project-frame-dot p-green"></span>
+              </div>
+              <span class="project-frame-url">bot.nomba-digital.bj</span>
+            </div>
+            <div class="project-banner" style="background: linear-gradient(135deg, #01B574 0%, #111C44 100%);">
+              <svg class="bg-watermark" viewBox="0 0 24 24" fill="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <h4>Nomba AI Assistant</h4>
+              <span>Chatbot WhatsApp & Web</span>
+            </div>
+            <div class="project-body">
+              <span class="project-category-tag">Automatisation • Intelligence Artificielle</span>
+              <h3 class="project-title">Agent Virtuel de Capture de Prospects 24/7</h3>
+              <p class="project-desc">Assistant interactif intelligent qui accueille les internautes, répond à leurs interrogations sur vos tarifs, qualifie leur besoin et transmet la fiche prospect directement sur WhatsApp.</p>
+              <ul class="project-features">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Réponses instantanées sans attente</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Scénarios personnalisés selon votre secteur</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Zéro lead perdu en dehors des heures de bureau</li>
+              </ul>
+              <div class="project-actions">
+                <a href="#simulateur" class="btn btn-secondary btn-sm" onclick="selectSimType('chatbot')" style="flex:1;">Configurer mon bot</a>
+                <a href="https://wa.me/2290161631431?text=Bonjour%20NOMBA%20DIGITAL%2C%20je%20souhaite%20un%20chatbot%20sur%20WhatsApp" target="_blank" class="btn btn-whatsapp btn-sm">Tester</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+          <a href="https://nomba-albouchra.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Explorer le portfolio complet du fondateur</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         POURQUOI NOMBA DIGITAL (HORIZON VALUE PROPS)
+         ========================================================================== -->
+    <section class="section" id="avantages">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-primary">Pourquoi Nous Choisir</div>
+          <h2>La rigueur technologique au service de votre croissance</h2>
+          <p>Nous ne nous contentons pas de créer de belles pages web : nous bâtissons des leviers économiques durables pour votre activité.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3>Accompagnement Proche & Dédié</h3>
+            <p>Un interlocuteur unique à votre écoute, de la formalisation de vos idées jusqu'au lancement et à la formation de vos équipes.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12" y2="18"></line></svg>
+            </div>
+            <h3>Pensé Mobile First</h3>
+            <p>Plus de 85% du trafic internet au Bénin se fait sur smartphone : nos sites sont légers, réactifs et s'affichent instantanément même en connexion 3G/4G.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Transparence & Zéro Surprise</h3>
+            <p>Chaque fonctionnalité annoncée est contractualisée, testée et réellement configurée. Vous savez exactement ce que vous achetez dès le départ.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 12l-4-4-4 4M12 8v8"></path></svg>
+            </div>
+            <h3>Rentabilité & Taux de Conversion</h3>
+            <p>Des appels à l'action stratégiques, des formulaires sans friction et des boutons WhatsApp directs pour convertir vos visiteurs en acheteurs payants.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOUNDER PROFILE (HORIZON EXECUTIVE PROFILE CARD)
+         ========================================================================== -->
+    <section class="section" id="fondateur">
+      <div class="container">
+        <div class="founder-card">
+          <div class="founder-media">
+            <div class="founder-avatar-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <div class="online-indicator" title="Disponible pour vos projets"></div>
+            </div>
+            <div>
+              <h3 class="founder-name">NOMBA Al’Bouchra</h3>
+              <span class="founder-role">Fondateur & Développeur Principal</span>
+            </div>
+            <a href="https://nomba-albouchra.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width:100%;">
+              <span>Consulter mon portfolio</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </div>
+
+          <div class="founder-bio">
+            <div class="badge badge-primary">À Propos du Fondateur</div>
+            <h2>« Transformer vos idées en solutions concrètes, rentables et utiles. »</h2>
+            <p>
+              Je suis <strong>NOMBA Al’Bouchra</strong>, développeur web passionné et entrepreneur numérique basé au Bénin. J'ai fondé <strong>NOMBA DIGITAL</strong> avec une mission claire : donner aux commerçants, PME et startups africaines accès à des technologies web de classe mondiale sans la complexité technique habituelle.
+            </p>
+            <p>
+              Chaque ligne de code que nous écrivons a pour but de valoriser votre marque, de fidéliser votre clientèle et de faciliter la gestion quotidienne de votre entreprise. Que ce soit pour un site vitrine percutant, une boutique en ligne fluide ou une application sur-mesure, nous mettons notre expertise au service de vos résultats.
+            </p>
+
+            <div>
+              <h4 style="font-size: 0.95rem; margin-bottom: 8px;">Compétences clés & Technologies :</h4>
+              <div class="founder-skills">
+                <span class="skill-pill">HTML5 / CSS3 / JavaScript Moderne</span>
+                <span class="skill-pill">UI/UX Design & Horizon Systems</span>
+                <span class="skill-pill">Boutiques E-commerce & Paniers WhatsApp</span>
+                <span class="skill-pill">Chatbots IA & Automatisation</span>
+                <span class="skill-pill">Applications Web & ERP (SCMS)</span>
+                <span class="skill-pill">SEO & Visibilité Google Bénin</span>
+                <span class="skill-pill">Intégration Mobile Money</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQ SECTION (HORIZON ACCORDION)
+         ========================================================================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-teal">Questions Fréquentes</div>
+          <h2>Tout ce que vous devez savoir pour démarrer</h2>
+          <p>Voici les réponses claires aux questions que se posent régulièrement nos clients avant de nous confier leur projet.</p>
+        </div>
+
+        <div class="faq-container">
+          
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>Quels types d'entreprises accompagnez-vous ?</span>
+              <div class="faq-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Nous travaillons avec des commerçants indépendants, des entrepreneurs, des PME, des startups et des organisations de taille intermédiaire, qu'ils soient basés à Cotonou, Porto-Novo, Parakou ou partout ailleurs au Bénin, ainsi qu'avec des clients à l'international travaillant à distance.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Ma boutique peut-elle accepter MTN Mobile Money, Moov Money et WhatsApp ?</span>
+              <div class="faq-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Absolument ! C'est l'une de nos grandes forces : nous connectons votre boutique en ligne directement à WhatsApp pour que chaque panier généré atterrisse sur votre téléphone avec le détail précis de la commande. Nous pouvons également intégrer des passerelles de paiement sécurisées pour encaisser directement par MTN MoMo, Moov Money, Wave ou Carte bancaire.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Comment obtenir un devis personnalisé et précis ?</span>
+              <div class="faq-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Vous pouvez utiliser directement notre <strong>simulateur interactif ci-dessus</strong> pour configurer vos options en temps réel, ou nous contacter sur WhatsApp au <strong>+229 01 61 63 14 31</strong>. Nous étudions votre projet dans les 24 heures et vous fournissons une proposition claire avec budget et calendrier garantis.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Quels sont les délais moyens de réalisation et de mise en ligne ?</span>
+              <div class="faq-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Pour un site vitrine ou une landing page, le délai moyen est de <strong>7 à 10 jours ouvrés</strong>. Pour une boutique e-commerce ou un chatbot complet, comptez entre <strong>12 et 18 jours</strong>. Nous disposons également d'une option Express pour les lancements urgents avec livraison prioritaire en moins de 7 jours.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Assurez-vous la maintenance et le suivi après la mise en ligne ?</span>
+              <div class="faq-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Oui, nous ne vous laissons jamais seul après la livraison ! Nous vous formons à la prise en main de votre outil et nous proposons des forfaits d'assistance technique, de sauvegardes régulières et de mises à jour de contenu pour que votre site reste toujours rapide, sécurisé et opérationnel.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge badge-primary">Passez à l'Action</div>
+          <h2>Donnons vie à votre projet dès aujourd'hui</h2>
+          <p>Écrivez-nous par WhatsApp ou remplissez le formulaire ci-dessous. Nous vous répondons avec plaisir sous 24 heures maximum.</p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info -->
+          <div class="contact-info-card">
+            <h3>Nos Coordonnées Directes</h3>
+            <p>Disponible du lundi au samedi pour échanger sur vos objectifs et trouver la solution adaptée à votre budget.</p>
+
+            <div class="contact-channels">
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.17c-.24.68-1.4 1.28-1.94 1.34-.51.06-1.18.09-3.41-.83-2.68-1.1-4.41-3.83-4.54-4-.14-.18-1.09-1.45-1.09-2.76 0-1.31.69-1.95.93-2.22.25-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.39-.06.61.47.23.54.78 1.9.85 2.04.07.14.12.3.02.48-.09.18-.14.3-.28.47-.14.16-.3.37-.43.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.6 1.98 1.1 1 2.03 1.31 2.31 1.45.28.14.45.12.62-.07.17-.18.73-.85.92-1.15.19-.3.38-.25.64-.15.26.1 1.66.78 1.95.92.28.14.47.21.54.33.07.12.07.72-.17 1.4z"/></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">WhatsApp Direct (Le plus rapide)</span>
+                  <a href="https://wa.me/2290161631431" target="_blank" class="channel-value">+229 01 61 63 14 31</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">E-mail Professionnel</span>
+                  <a href="mailto:nombaalbouchra71@gmail.com" class="channel-value">nombaalbouchra71@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">Zone d'intervention</span>
+                  <span class="channel-value">Cotonou, Bénin & International</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:auto;">
+              <a href="https://wa.me/2290161631431?text=Bonjour%20NOMBA%20DIGITAL%2C%20je%20souhaite%20un%20renseignement" target="_blank" class="btn btn-whatsapp" style="width:100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.17c-.24.68-1.4 1.28-1.94 1.34-.51.06-1.18.09-3.41-.83-2.68-1.1-4.41-3.83-4.54-4-.14-.18-1.09-1.45-1.09-2.76 0-1.31.69-1.95.93-2.22.25-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.39-.06.61.47.23.54.78 1.9.85 2.04.07.14.12.3.02.48-.09.18-.14.3-.28.47-.14.16-.3.37-.43.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.6 1.98 1.1 1 2.03 1.31 2.31 1.45.28.14.45.12.62-.07.17-.18.73-.85.92-1.15.19-.3.38-.25.64-.15.26.1 1.66.78 1.95.92.28.14.47.21.54.33.07.12.07.72-.17 1.4z"/></svg>
+                <span>Démarrer un chat WhatsApp immédiat</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <h3 style="font-size:1.5rem; margin-bottom: 20px;">Envoyez-nous un message</h3>
+
+            <form id="contactForm" novalidate>
+              <div class="form-grid">
+                
+                <div class="form-group">
+                  <label for="c_nom">Nom complet *</label>
+                  <input type="text" id="c_nom" name="nom" class="form-input" placeholder="Ex: Jean Kouassi" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="c_entreprise">Entreprise (facultatif)</label>
+                  <input type="text" id="c_entreprise" name="entreprise" class="form-input" placeholder="Ex: Kouassi Store SARL">
+                </div>
+
+                <div class="form-group">
+                  <label for="c_email">Adresse e-mail *</label>
+                  <input type="email" id="c_email" name="email" class="form-input" placeholder="nom@exemple.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="c_tel">Numéro WhatsApp / Téléphone *</label>
+                  <input type="tel" id="c_tel" name="whatsapp" class="form-input" placeholder="+229 01 ..." required>
+                </div>
+
+                <div class="form-group form-full">
+                  <label for="c_service">Service souhaité *</label>
+                  <select id="c_service" name="service" class="form-select" required>
+                    <option value="">Sélectionnez un domaine d'intérêt...</option>
+                    <option value="Site Vitrine">Création de site vitrine professionnel</option>
+                    <option value="Boutique E-commerce">Boutique e-commerce & commande WhatsApp</option>
+                    <option value="Chatbot & Automatisation">Chatbot et automatisation commerciale</option>
+                    <option value="SEO & Visibilité">Référencement SEO & Visibilité Google</option>
+                    <option value="Application sur-mesure">Application web ou solution de gestion (ERP/SCMS)</option>
+                    <option value="Maintenance & Hébergement">Maintenance, hébergement ou sécurisation</option>
+                    <option value="Autre">Autre projet ou demande spécifique</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-full">
+                  <label for="c_message">Description de votre projet *</label>
+                  <textarea id="c_message" name="message" class="form-textarea" placeholder="Expliquez-nous brièvement votre besoin, vos délais et vos attentes..." required></textarea>
+                </div>
+
+                <div class="form-group form-full">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="rgpd" id="c_rgpd" required checked>
+                    <span>J'accepte que ces données soient utilisées par NOMBA DIGITAL pour répondre à ma demande de projet.</span>
+                  </label>
+                </div>
+
+                <div class="form-group form-full" style="display:flex; gap:12px; margin-top:8px;">
+                  <button type="submit" class="btn btn-primary btn-lg" style="flex:1;">
+                    <span>Envoyer mon message</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  </button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Col -->
+        <div class="footer-brand">
+          <a href="#accueil" class="brand-logo">
+            <svg viewBox="0 0 48 48" style="width:34px; height:34px;">
+              <defs>
+                <linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#4318FF"/>
+                  <stop offset="100%" stop-color="#00D2B4"/>
+                </linearGradient>
+              </defs>
+              <rect width="48" height="48" rx="14" fill="url(#footGrad)"/>
+              <path d="M15 35V13l18 22V13" stroke="#FFFFFF" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>NOMBA <b>DIGITAL</b></span>
+          </a>
+          <p>
+            Votre partenaire d'excellence au Bénin pour la création de sites web performants, boutiques e-commerce WhatsApp et solutions numériques sur-mesure.
+          </p>
+          <div style="font-size:0.85rem; color:var(--text-muted);">
+            Propulsé avec passion par <strong>NOMBA Al’Bouchra</strong>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Nos Services</a></li>
+            <li><a href="#simulateur">Simulateur de Devis</a></li>
+            <li><a href="#realisations">Nos Réalisations</a></li>
+            <li><a href="#avantages">Pourquoi Nous</a></li>
+            <li><a href="#fondateur">À propos du Fondateur</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Informations & Légal -->
+        <div class="footer-col">
+          <h4>Informations & Légal</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openModal('mentions')">Mentions Légales</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('confidentialite')">Politique de Confidentialité</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('conditions')">Conditions de Service</a></li>
+            <li><a href="https://nomba-albouchra.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio du Fondateur ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact rapide -->
+        <div class="footer-col">
+          <h4>Contact Direct</h4>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/2290161631431" target="_blank">WhatsApp : +229 01 61 63 14 31</a></li>
+            <li><a href="mailto:nombaalbouchra71@gmail.com">nombaalbouchra71@gmail.com</a></li>
+            <li><span>Cotonou, Bénin & International</span></li>
+            <li style="margin-top:10px;">
+              <a href="#simulateur" class="btn btn-primary btn-sm" style="display:inline-flex;">Simuler un projet</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 NOMBA DIGITAL. Tous droits réservés. Conçu avec des technologies UI/UX d'élite.</div>
+        <div>
+          <a href="#accueil" style="color:var(--text-muted);">Haut de page ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FLOATING WHATSAPP SPEED-DIAL (FAB)
+       ========================================================================== -->
+  <a href="https://wa.me/2290161631431?text=Bonjour%20NOMBA%20DIGITAL%2C%20je%20souhaite%20un%20renseignement%20sur%20vos%20services" target="_blank" rel="noopener noreferrer" class="fab-whatsapp" aria-label="Discuter sur WhatsApp">
+    <div class="fab-pulse-ring"></div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.17c-.24.68-1.4 1.28-1.94 1.34-.51.06-1.18.09-3.41-.83-2.68-1.1-4.41-3.83-4.54-4-.14-.18-1.09-1.45-1.09-2.76 0-1.31.69-1.95.93-2.22.25-.26.54-.33.72-.33.18 0 .36 0 .52.01.17.01.39-.06.61.47.23.54.78 1.9.85 2.04.07.14.12.3.02.48-.09.18-.14.3-.28.47-.14.16-.3.37-.43.5-.14.14-.29.3-.13.58.17.28.74 1.22 1.6 1.98 1.1 1 2.03 1.31 2.31 1.45.28.14.45.12.62-.07.17-.18.73-.85.92-1.15.19-.3.38-.25.64-.15.26.1 1.66.78 1.95.92.28.14.47.21.54.33.07.12.07.72-.17 1.4z"/></svg>
+    <span>Discuter sur WhatsApp</span>
+  </a>
+
+  <!-- ==========================================================================
+       TOAST NOTIFICATION BOX
+       ========================================================================== -->
+  <div class="toast-box" id="toastBox" role="status" aria-live="polite">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#01B574" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Action réussie !</span>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL DIALOG (LEGAL PAGES & DOCUMENTATION)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="legalModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal()" aria-label="Fermer la boîte de dialogue">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       INTERACTIVE JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    /* Global Configuration & Constants */
+    const WA_NUMBER = "2290161631431";
+    const EMAIL_ADDR = "nombaalbouchra71@gmail.com";
+
+    /* Helper function for WhatsApp URLs */
+    function getWaLink(msg) {
+      return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+    }
+
+    /* Toast Notification Helper */
+    function showToast(text) {
+      const toast = document.getElementById("toastBox");
+      const msg = document.getElementById("toastMsg");
+      msg.textContent = text;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3500);
+    }
+
+    /* ==========================================================================
+       THEME MANAGEMENT (DARK / LIGHT MODE - HORIZON UI)
+       ========================================================================== */
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    const moonIcon = document.getElementById("moonIcon");
+    const sunIcon = document.getElementById("sunIcon");
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("nomba_theme", theme);
+      if (theme === "dark") {
+        moonIcon.style.display = "block";
+        sunIcon.style.display = "none";
+      } else {
+        moonIcon.style.display = "none";
+        sunIcon.style.display = "block";
+      }
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem("nomba_theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    applyTheme(savedTheme);
+
+    themeToggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+      showToast(next === "dark" ? "🌙 Mode sombre activé" : "☀️ Mode clair activé");
+    });
+
+    /* ==========================================================================
+       MOBILE DRAWER MENU
+       ========================================================================== */
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileDrawer = document.getElementById("mobileDrawer");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileDrawer.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".mobile-link").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileDrawer.classList.remove("open");
+      });
+    });
+
+    /* ==========================================================================
+       ACTIVE NAV LINK OBSERVER
+       ========================================================================== */
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => {
+        const top = sec.offsetTop - 140;
+        if (window.scrollY >= top) {
+          current = sec.getAttribute("id");
+        }
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle("active", a.getAttribute("href") === `#${current}`);
+      });
+    });
+
+    /* ==========================================================================
+       INTERACTIVE DEVIS SIMULATOR LOGIC
+       ========================================================================== */
+    const typeCards = document.querySelectorAll(".project-type-card");
+    const optionCheckboxes = document.querySelectorAll("input[name='sim_opt']");
+    const delayCards = document.querySelectorAll(".delay-card");
+
+    let simState = {
+      typeName: "Site Vitrine Pro",
+      typeKey: "vitrine",
+      basePrice: 100000,
+      baseDays: 10,
+      optionsTotal: 90000,
+      optionsList: ["Intégration Mobile Money & Cartes", "Pack Référencement Google SEO Pro", "Nom de domaine (.com ou .bj) + Hébergement Cloud 1 An"],
+      speedMultiplier: 1,
+      speedName: "Standard",
+      speedDaysMultiplier: 1
+    };
+
+    function updateSimulation() {
+      // Base
+      const selectedCard = document.querySelector(".project-type-card.selected");
+      if (selectedCard) {
+        simState.typeName = selectedCard.querySelector(".pt-name").textContent.trim();
+        simState.typeKey = selectedCard.dataset.type;
+        simState.basePrice = parseInt(selectedCard.dataset.base, 10);
+        simState.baseDays = parseInt(selectedCard.dataset.delay, 10);
+      }
+
+      // Options
+      let optSum = 0;
+      let optList = [];
+      optionCheckboxes.forEach(cb => {
+        if (cb.checked) {
+          optSum += parseInt(cb.dataset.cost, 10);
+          const name = cb.closest(".option-item").querySelector(".option-name").textContent.trim();
+          optList.push(name);
+        }
+      });
+      simState.optionsTotal = optSum;
+      simState.optionsList = optList;
+
+      // Speed
+      const selectedDelay = document.querySelector(".delay-card.selected");
+      if (selectedDelay) {
+        simState.speedMultiplier = parseFloat(selectedDelay.dataset.mult);
+        simState.speedName = selectedDelay.dataset.speed === "express" ? "Express Prioritaire" : "Standard";
+        simState.speedDaysMultiplier = selectedDelay.dataset.speed === "express" ? 0.6 : 1;
+      }
+
+      // Calculation
+      const rawTotal = (simState.basePrice + simState.optionsTotal) * simState.speedMultiplier;
+      const finalPrice = Math.round(rawTotal / 5000) * 5000; // Round to nearest 5k FCFA
+      const finalEur = Math.round(finalPrice / 655.957);
+
+      const calculatedMinDays = Math.max(5, Math.round(simState.baseDays * simState.speedDaysMultiplier));
+      const calculatedMaxDays = calculatedMinDays + (simState.speedName === "Express Prioritaire" ? 3 : 5);
+
+      // Render in UI
+      document.getElementById("sumProjectName").textContent = simState.typeName;
+      document.getElementById("sumOptionsCount").textContent = `${optList.length} option${optList.length > 1 ? "s" : ""} sélectionnée${optList.length > 1 ? "s" : ""}`;
+      document.getElementById("sumDelayType").textContent = simState.speedName;
+      document.getElementById("sumDays").textContent = `${calculatedMinDays} à ${calculatedMaxDays} jours ouvrés`;
+      document.getElementById("sumPriceFcfa").textContent = `${finalPrice.toLocaleString('fr-FR')} FCFA`;
+      document.getElementById("sumPriceEur").textContent = `~ ${finalEur.toLocaleString('fr-FR')} EUR`;
+    }
+
+    // Type selection
+    typeCards.forEach(card => {
+      card.addEventListener("click", () => {
+        typeCards.forEach(c => c.classList.remove("selected"));
+        card.classList.add("selected");
+        updateSimulation();
+      });
+    });
+
+    // Checkbox toggles
+    optionCheckboxes.forEach(cb => {
+      cb.addEventListener("change", updateSimulation);
+    });
+
+    // Delay selector
+    delayCards.forEach(d => {
+      d.addEventListener("click", () => {
+        delayCards.forEach(card => card.classList.remove("selected"));
+        d.classList.add("selected");
+        updateSimulation();
+      });
+    });
+
+    // Function to pre-select simulator type from service cards
+    window.selectSimType = function(type) {
+      const target = document.querySelector(`.project-type-card[data-type="${type}"]`);
+      if (target) {
+        typeCards.forEach(c => c.classList.remove("selected"));
+        target.classList.add("selected");
+        updateSimulation();
+      }
+    };
+
+    // Format message generator for Devis
+    function buildDevisSummaryMessage() {
+      const priceFcfa = document.getElementById("sumPriceFcfa").textContent;
+      const delay = document.getElementById("sumDays").textContent;
+
+      let msg = `Bonjour NOMBA DIGITAL !\n\n`;
+      msg += `J'ai configuré mon projet sur votre simulateur web :\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `• Projet : ${simState.typeName}\n`;
+      msg += `• Rythme : ${simState.speedName} (${delay})\n`;
+      msg += `• Options incluses (${simState.optionsList.length}) :\n`;
+      simState.optionsList.forEach(opt => {
+        msg += `   - ${opt}\n`;
+      });
+      msg += `━━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `• Estimation : ${priceFcfa}\n\n`;
+      msg += `Pouvez-vous m'en dire plus et me confirmer les prochaines étapes ? Merci !`;
+      return msg;
+    }
+
+    document.getElementById("btnSendWhatsApp").addEventListener("click", () => {
+      const text = buildDevisSummaryMessage();
+      window.open(getWaLink(text), "_blank");
+    });
+
+    document.getElementById("btnSendEmail").addEventListener("click", () => {
+      const text = buildDevisSummaryMessage();
+      const subject = encodeURIComponent(`Demande de Devis — ${simState.typeName}`);
+      const body = encodeURIComponent(text);
+      window.location.href = `mailto:${EMAIL_ADDR}?subject=${subject}&body=${body}`;
+    });
+
+    // Initial calculation run
+    updateSimulation();
+
+    /* ==========================================================================
+       PORTFOLIO FILTERING
+       ========================================================================== */
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+          if (filter === "all") {
+            card.style.display = "flex";
+          } else {
+            const categories = card.dataset.category.split(" ");
+            card.style.display = categories.includes(filter) ? "flex" : "none";
+          }
+        });
+      });
+    });
+
+    /* ==========================================================================
+       FAQ ACCORDION
+       ========================================================================== */
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+      const q = item.querySelector(".faq-question");
+      q.addEventListener("click", () => {
+        const wasActive = item.classList.contains("active");
+        faqItems.forEach(i => i.classList.remove("active"));
+        if (!wasActive) {
+          item.classList.add("active");
+        }
+      });
+    });
+
+    /* ==========================================================================
+       CONTACT FORM SUBMISSION
+       ========================================================================== */
+    const contactForm = document.getElementById("contactForm");
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        showToast("⚠️ Merci de remplir tous les champs obligatoires (*)");
+        return;
+      }
+
+      const nom = document.getElementById("c_nom").value.trim();
+      const ent = document.getElementById("c_entreprise").value.trim();
+      const email = document.getElementById("c_email").value.trim();
+      const tel = document.getElementById("c_tel").value.trim();
+      const srv = document.getElementById("c_service").value;
+      const msg = document.getElementById("c_message").value.trim();
+
+      let formatted = `*Nouveau message de contact — NOMBA DIGITAL*\n\n`;
+      formatted += `• Nom : ${nom}\n`;
+      if (ent) formatted += `• Entreprise : ${ent}\n`;
+      formatted += `• E-mail : ${email}\n`;
+      formatted += `• WhatsApp/Tél : ${tel}\n`;
+      formatted += `• Service : ${srv}\n`;
+      formatted += `• Message :\n${msg}\n`;
+
+      // Open WhatsApp with prefilled message
+      showToast("🚀 Redirection vers WhatsApp pour envoyer votre message...");
+      setTimeout(() => {
+        window.open(getWaLink(formatted), "_blank");
+      }, 700);
+    });
+
+    /* ==========================================================================
+       LEGAL MODAL LOGIC
+       ========================================================================== */
+    const legalModal = document.getElementById("legalModal");
+    const modalContent = document.getElementById("modalContent");
+
+    const LEGAL_TEXTS = {
+      mentions: `
+        <h2 style="font-size:1.6rem; margin-bottom:14px; color:var(--text-heading);">Mentions Légales</h2>
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">1. Éditeur de la Plateforme</h3>
+        <p>Le site est édité par <strong>NOMBA DIGITAL</strong>, agence web et solutions numériques fondée par <strong>NOMBA Al’Bouchra</strong>, entrepreneur et développeur au Bénin.</p>
+        <p><strong>Contact électronique :</strong> <a href="mailto:${EMAIL_ADDR}">${EMAIL_ADDR}</a><br>
+        <strong>Téléphone & WhatsApp :</strong> +229 01 61 63 14 31</p>
+
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">2. Hébergement</h3>
+        <p>La plateforme est déployée et hébergée sur des infrastructures cloud haute performance avec sécurité SSL et certificat de chiffrement HTTPS actif.</p>
+
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">3. Propriété Intellectuelle</h3>
+        <p>L'ensemble des visuels, logos, textes, structures de composants et codes sources présentés sur cette plateforme sont la propriété exclusive de NOMBA DIGITAL, sauf mention expresse contraire. Toute reproduction ou utilisation non autorisée est strictement prohibée.</p>
+      `,
+      confidentialite: `
+        <h2 style="font-size:1.6rem; margin-bottom:14px; color:var(--text-heading);">Politique de Confidentialité</h2>
+        <p>Chez <strong>NOMBA DIGITAL</strong>, la protection de votre vie privée est une priorité absolue. Nous collectons uniquement les informations indispensables pour traiter vos demandes de devis et projets web.</p>
+
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">1. Données Collectées</h3>
+        <p>Lorsque vous utilisez notre formulaire de contact ou notre simulateur de devis, vous nous transmettez vos coordonnées (nom, e-mail, numéro de téléphone WhatsApp, description de projet). Ces données sont exclusivement utilisées pour la relation commerciale avec NOMBA DIGITAL.</p>
+
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">2. Zéro Revente de Données</h3>
+        <p>Vos informations ne sont jamais revendues, louées ni transmises à des tiers sans votre consentement express.</p>
+
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">3. Exercice de vos Droits</h3>
+        <p>Conformément aux réglementations sur la protection des données personnelles, vous disposez d'un droit d'accès, de modification ou de suppression de vos informations en écrivant directement à <a href="mailto:${EMAIL_ADDR}">${EMAIL_ADDR}</a>.</p>
+      `,
+      conditions: `
+        <h2 style="font-size:1.6rem; margin-bottom:14px; color:var(--text-heading);">Conditions Générales de Service</h2>
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">1. Processus de Commande & Devis</h3>
+        <p>Tout projet confié à NOMBA DIGITAL fait l'objet d'un cadrage technique et d'une validation conjointe du cahier des charges. Les estimations fournies sur le simulateur sont indicatives et sont confirmées après échange direct.</p>
+
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">2. Délais & Modalités de Livraison</h3>
+        <p>Les délais courent à compter de la réception de l'ensemble des éléments indispensables (textes, logos, images produits) fournis par le client.</p>
+
+        <h3 style="font-size:1.15rem; margin-top:20px; color:var(--text-heading);">3. Services Tiers</h3>
+        <p>Les intégrations dépendant de tiers (opérateurs MTN/Moov/Wave, API WhatsApp Business, registraires de noms de domaine) sont assujetties aux conditions générales et à la disponibilité de ces plateformes tierces.</p>
+      `
+    };
+
+    window.openModal = function(key) {
+      if (LEGAL_TEXTS[key]) {
+        modalContent.innerHTML = LEGAL_TEXTS[key];
+        legalModal.classList.add("open");
+      }
+    };
+
+    window.closeModal = function() {
+      legalModal.classList.remove("open");
+    };
+
+    legalModal.addEventListener("click", (e) => {
+      if (e.target === legalModal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && legalModal.classList.contains("open")) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
