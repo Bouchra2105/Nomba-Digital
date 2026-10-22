@@ -12,7 +12,8 @@
   <meta name="theme-color" content="#0B1437">
 
   <!-- Favicon SVG -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234318FF'/%3E%3Cstop offset='100%25' stop-color='%2300D2B4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='14' fill='url(%23g)'/%3E%3Cpath d='M15 35V13l18 22V13' stroke='%23ffffff' stroke-width='4.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo-icon.png">
 
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,16 +29,16 @@
       --brand-primary: #4318FF;
       --brand-primary-rgb: 67, 24, 255;
       --brand-primary-hover: #3311DB;
-      --brand-secondary: #00D2B4;
-      --brand-secondary-rgb: 0, 210, 180;
+      --brand-secondary: #08BFFD;
+      --brand-secondary-rgb: 8, 191, 253;
       --brand-purple: #7551FF;
       --brand-emerald: #01B574;
       --brand-amber: #FFB547;
       --brand-red: #EE5D50;
 
-      --brand-gradient: linear-gradient(135deg, #4318FF 0%, #00D2B4 100%);
-      --brand-gradient-hover: linear-gradient(135deg, #3311DB 0%, #00bfa3 100%);
-      --brand-gradient-subtle: linear-gradient(135deg, rgba(67, 24, 255, 0.08) 0%, rgba(0, 210, 180, 0.08) 100%);
+      --brand-gradient: linear-gradient(135deg, #08BFFD 0%, #4318FF 100%);
+      --brand-gradient-hover: linear-gradient(135deg, #009fe6 0%, #3311DB 100%);
+      --brand-gradient-subtle: linear-gradient(135deg, rgba(67, 24, 255, 0.08) 0%, rgba(8, 191, 253, 0.08) 100%);
 
       /* Light Theme (Horizon Default Light) */
       --bg-body: #F4F7FE;
@@ -79,7 +80,7 @@
       --bg-header: rgba(11, 20, 55, 0.85);
       --border-color: rgba(255, 255, 255, 0.08);
       --border-subtle: rgba(255, 255, 255, 0.05);
-      --border-glow: rgba(0, 210, 180, 0.25);
+      --border-glow: rgba(8, 191, 253, 0.25);
 
       --text-heading: #FFFFFF;
       --text-body: #A3AED0;
@@ -296,9 +297,9 @@
       border-color: rgba(117, 81, 255, 0.3);
     }
     .badge-teal {
-      background: rgba(0, 210, 180, 0.12);
-      color: #00A68F;
-      border: 1px solid rgba(0, 210, 180, 0.25);
+      background: rgba(8, 191, 253, 0.12);
+      color: #08BFFD;
+      border: 1px solid rgba(8, 191, 253, 0.25);
     }
     [data-theme="dark"] .badge-teal {
       color: var(--brand-secondary);
@@ -347,6 +348,24 @@
       transition: all 0.3s ease;
     }
 
+    
+    /* Official Logo Display */
+    .brand-logo-img {
+      height: 42px;
+      width: auto;
+      max-width: 175px;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+      filter: drop-shadow(0 2px 8px rgba(8, 191, 253, 0.25));
+    }
+    .brand-logo:hover .brand-logo-img {
+      transform: scale(1.04);
+    }
+    .logo-theme-dark { display: block; }
+    .logo-theme-light { display: none; }
+    [data-theme="light"] .logo-theme-dark { display: none !important; }
+    [data-theme="light"] .logo-theme-light { display: block !important; }
+    
     .brand-logo {
       display: flex;
       align-items: center;
@@ -1964,17 +1983,8 @@
   <header class="site-header">
     <div class="nav-wrapper">
       <a href="#accueil" class="brand-logo" aria-label="Accueil NOMBA DIGITAL">
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-          <defs>
-            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#4318FF"/>
-              <stop offset="100%" stop-color="#00D2B4"/>
-            </linearGradient>
-          </defs>
-          <rect width="48" height="48" rx="14" fill="url(#logoGrad)"/>
-          <path d="M15 35V13l18 22V13" stroke="#FFFFFF" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>NOMBA <b>DIGITAL</b></span>
+        <img src="assets/logo-horizontal.png" alt="NOMBA DIGITAL" class="brand-logo-img logo-theme-dark" height="42">
+        <img src="assets/logo-horizontal-light.png" alt="NOMBA DIGITAL" class="brand-logo-img logo-theme-light" height="42">
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -2786,12 +2796,10 @@
       <div class="container">
         <div class="founder-card">
           <div class="founder-media">
-            <div class="founder-avatar-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
+            <div class="founder-avatar-wrap" style="overflow:hidden; padding:0; background:#000; border: 4px solid var(--border-glow);">
+              <img src="assets/logo.jpg" alt="NOMBA DIGITAL Insignia" style="width:100%; height:100%; object-fit:cover; transform:scale(1.08);">
               <div class="online-indicator" title="Disponible pour vos projets"></div>
+            </div>
             </div>
             <div>
               <h3 class="founder-name">NOMBA Al’Bouchra</h3>
@@ -3053,18 +3061,9 @@
         
         <!-- Brand Col -->
         <div class="footer-brand">
-          <a href="#accueil" class="brand-logo">
-            <svg viewBox="0 0 48 48" style="width:34px; height:34px;">
-              <defs>
-                <linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#4318FF"/>
-                  <stop offset="100%" stop-color="#00D2B4"/>
-                </linearGradient>
-              </defs>
-              <rect width="48" height="48" rx="14" fill="url(#footGrad)"/>
-              <path d="M15 35V13l18 22V13" stroke="#FFFFFF" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>NOMBA <b>DIGITAL</b></span>
+          <a href="#accueil" class="brand-logo" style="margin-bottom: 6px;">
+            <img src="assets/logo-horizontal.png" alt="NOMBA DIGITAL" class="brand-logo-img logo-theme-dark" height="48">
+            <img src="assets/logo-horizontal-light.png" alt="NOMBA DIGITAL" class="brand-logo-img logo-theme-light" height="48">
           </a>
           <p>
             Votre partenaire d'excellence au Bénin pour la création de sites web performants, boutiques e-commerce WhatsApp et solutions numériques sur-mesure.
