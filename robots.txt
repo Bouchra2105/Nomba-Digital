@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nomba-albouchra.vercel.app/sitemap.xml
