@@ -1216,41 +1216,49 @@
       align-items: flex-start;
       gap: 8px;
       color: var(--text-body);
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
     }
-    .summary-item > span:first-child {
+    .summary-item > :first-child {
       flex-shrink: 0;
+      max-width: 55%;
     }
-    .summary-item > strong {
+    .summary-item > strong,
+    .summary-item > :last-child:not(:first-child) {
       text-align: right;
       word-break: break-word;
+      overflow-wrap: anywhere;
       min-width: 0;
-      max-width: 60%;
+      max-width: 55%;
     }
     .summary-item.total-row {
       margin-top: 10px;
       padding-top: 14px;
       border-top: 1px dashed var(--border-color);
-      align-items: flex-end;
+      align-items: flex-start;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
     }
 
     .price-box {
       text-align: right;
       flex-shrink: 0;
+      min-width: 0;
+      word-break: break-word;
     }
     .total-price-val {
       font-size: 1.8rem;
       font-weight: 800;
       color: var(--text-heading);
       letter-spacing: -0.02em;
-      white-space: nowrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
     .total-price-eur {
       font-size: 0.85rem;
       color: var(--text-muted);
       font-weight: 600;
-      white-space: nowrap;
     }
 
     .delay-estimate-pill {
@@ -2213,25 +2221,36 @@
         gap: 8px;
       }
       .sim-summary-card {
-        padding: 20px 16px;
+        padding: 20px 14px;
         border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .summary-list {
+        overflow: hidden;
       }
       .summary-item {
         flex-direction: column;
         gap: 2px;
+        overflow: hidden;
+        max-width: 100%;
       }
+      .summary-item > :first-child,
       .summary-item > span:first-child {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
         color: var(--text-muted);
         text-transform: uppercase;
         letter-spacing: 0.04em;
         font-weight: 600;
+        max-width: 100%;
       }
-      .summary-item > strong {
+      .summary-item > strong,
+      .summary-item > :last-child:not(:first-child) {
         text-align: left;
         max-width: 100%;
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         color: var(--text-heading);
+        word-break: break-word;
+        overflow-wrap: anywhere;
       }
       .summary-item.total-row {
         flex-direction: column;
@@ -2239,17 +2258,23 @@
         gap: 8px;
         padding-top: 16px;
         margin-top: 12px;
+        overflow: hidden;
       }
       .price-box {
         text-align: left;
         width: 100%;
+        overflow: hidden;
       }
       .total-price-val {
-        font-size: 1.5rem;
-        white-space: normal;
+        font-size: 1.4rem;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+      .total-price-eur {
+        font-size: 0.82rem;
       }
       .delay-estimate-pill {
-        font-size: 0.82rem;
+        font-size: 0.8rem;
         padding: 10px 12px;
         flex-wrap: wrap;
         gap: 4px;
@@ -2548,6 +2573,85 @@
       .skill-pill {
         font-size: 0.72rem;
         padding: 3px 8px;
+      }
+    }
+
+
+    /* ========================================================
+       MOBILE FIXES — Pass 4 (contact form + FAB)
+       ======================================================== */
+
+    /* Contact form submit button - full width on mobile */
+    .form-submit-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 14px 24px;
+    }
+
+    /* Padding bottom sur body pour que FAB ne cache pas le contenu */
+    @media (max-width: 860px) {
+      body {
+        padding-bottom: 80px;
+      }
+      /* Consent checkbox text wrap */
+      .form-consent {
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .form-consent label {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+      /* Form submit full width */
+      .contact-form-card .btn-primary {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+      /* Prevent hero section overflow */
+      .hero-grid {
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 640px) {
+      /* Ajustements formulaire */
+      .form-group {
+        gap: 6px;
+      }
+      .form-label {
+        font-size: 0.88rem;
+      }
+      .form-input, .form-select, .form-textarea {
+        padding: 12px 14px;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+      .form-textarea {
+        min-height: 110px;
+      }
+      /* Bouton submit */
+      .contact-form-card .btn-primary,
+      .form-submit-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 20px;
+        font-size: 0.97rem;
+        border-radius: 12px;
+      }
+      /* Contact info card */
+      .contact-info-item {
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .contact-info-icon {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      /* Social links */
+      .social-links {
+        flex-wrap: wrap;
+        gap: 8px;
       }
     }
 
