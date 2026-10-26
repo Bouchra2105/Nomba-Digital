@@ -1055,6 +1055,8 @@
       gap: 6px;
       transition: all 0.2s ease;
       position: relative;
+      overflow: hidden;
+      min-width: 0;
     }
     .project-type-card:hover {
       border-color: var(--brand-primary);
@@ -1072,10 +1074,13 @@
       font-weight: 700;
       color: var(--text-heading);
       font-size: 1rem;
+      word-break: break-word;
     }
     .project-type-card .pt-desc {
       font-size: 0.82rem;
       color: var(--text-muted);
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
     .project-type-card .pt-price {
       font-size: 0.85rem;
@@ -1208,28 +1213,44 @@
     .summary-item {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
       color: var(--text-body);
+    }
+    .summary-item > span:first-child {
+      flex-shrink: 0;
+    }
+    .summary-item > strong {
+      text-align: right;
+      word-break: break-word;
+      min-width: 0;
+      max-width: 60%;
     }
     .summary-item.total-row {
       margin-top: 10px;
       padding-top: 14px;
       border-top: 1px dashed var(--border-color);
-      align-items: baseline;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
     .price-box {
       text-align: right;
+      flex-shrink: 0;
     }
     .total-price-val {
       font-size: 1.8rem;
       font-weight: 800;
       color: var(--text-heading);
       letter-spacing: -0.02em;
+      white-space: nowrap;
     }
     .total-price-eur {
       font-size: 0.85rem;
       color: var(--text-muted);
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .delay-estimate-pill {
@@ -2195,8 +2216,43 @@
         padding: 20px 16px;
         border-radius: var(--radius-md);
       }
+      .summary-item {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .summary-item > span:first-child {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-weight: 600;
+      }
+      .summary-item > strong {
+        text-align: left;
+        max-width: 100%;
+        font-size: 0.95rem;
+        color: var(--text-heading);
+      }
+      .summary-item.total-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-top: 16px;
+        margin-top: 12px;
+      }
+      .price-box {
+        text-align: left;
+        width: 100%;
+      }
       .total-price-val {
         font-size: 1.5rem;
+        white-space: normal;
+      }
+      .delay-estimate-pill {
+        font-size: 0.82rem;
+        padding: 10px 12px;
+        flex-wrap: wrap;
+        gap: 4px;
       }
 
       /* Founder Card */
@@ -2285,6 +2341,216 @@
         text-align: center;
       }
     }
+
+    /* ========================================================
+       MOBILE FIXES — Pass 2 (responsive extras)
+       ======================================================== */
+
+    /* Prevent horizontal overflow globally */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    img, video, iframe, embed, object {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Mobile menu drawer */
+    .mobile-nav-drawer {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    /* Devis simulator — options list */
+    .options-list {
+      overflow: hidden;
+    }
+    .option-item {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .option-label {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .option-name {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+    .option-desc {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+
+    /* Project type cards — prevent all text overflow */
+    .project-type-card {
+      overflow: hidden;
+      min-width: 0;
+    }
+    .project-type-card .pt-icon {
+      flex-shrink: 0;
+    }
+    .project-type-card .pt-name {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .project-type-card .pt-desc {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .project-type-card .pt-price {
+      word-break: break-word;
+    }
+
+    /* Summary card — all children */
+    .sim-summary-card {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .summary-item {
+      min-width: 0;
+      max-width: 100%;
+    }
+    .summary-item > span {
+      min-width: 0;
+      word-break: break-word;
+    }
+    .summary-item > strong {
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    /* Hero section — prevent overflow */
+    .hero-section {
+      overflow-x: hidden;
+    }
+    .hero-showcase {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .showcase-card {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    /* Section titles — no overflow */
+    .section-header h2 {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    /* Service cards */
+    .service-card {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .service-card h3 {
+      word-break: break-word;
+    }
+    .service-card p {
+      word-break: break-word;
+    }
+
+    /* Contact info */
+    .contact-info-item a,
+    .contact-info-item span {
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+
+    /* Stats */
+    .stat-card {
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    /* Portfolio cards */
+    .project-card {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .project-tags {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      /* Extra small phones */
+      .hero-content h1 {
+        font-size: clamp(1.6rem, 8vw, 2.1rem);
+        line-height: 1.15;
+      }
+      .brand-logo-img {
+        height: 30px;
+        max-width: 120px;
+      }
+      .section-eyebrow {
+        font-size: 0.72rem;
+      }
+      .section-header h2 {
+        font-size: clamp(1.35rem, 6.5vw, 1.8rem);
+      }
+      .btn-lg {
+        font-size: 0.9rem;
+        padding: 12px 18px;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-types-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .project-type-card {
+        padding: 12px;
+      }
+      .sim-card {
+        padding: 16px 12px;
+      }
+      .sim-summary-card {
+        padding: 16px 12px;
+      }
+      .total-price-val {
+        font-size: 1.3rem;
+      }
+      .mockup-kpi-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .contact-info-card, .contact-form-card {
+        padding: 20px 14px;
+      }
+      .footer-nav-col h4 {
+        font-size: 0.88rem;
+      }
+      .option-price-tag {
+        margin-left: 0;
+      }
+      .delay-grid {
+        grid-template-columns: 1fr;
+      }
+      .founder-skills {
+        gap: 5px;
+      }
+      .skill-pill {
+        font-size: 0.72rem;
+        padding: 3px 8px;
+      }
+    }
+
   </style>
 </head>
 <body>
