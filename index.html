@@ -1957,6 +1957,12 @@
     /* ==========================================================================
        RESPONSIVE BREAKPOINTS (MOBILE FIRST ARCHITECTURE)
        ========================================================================== */
+
+    /* ==========================================================================
+       RESPONSIVE MOBILE — VERSION COMPLETE ET CORRIGEE
+       ========================================================================== */
+
+    /* --- 1024px : Tablette paysage --- */
     @media (max-width: 1024px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -1988,12 +1994,14 @@
       }
       .contact-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
 
+    /* --- 860px : Tablette portrait --- */
     @media (max-width: 860px) {
       .nav-links, .nav-actions .btn {
         display: none;
@@ -2008,17 +2016,38 @@
         grid-template-columns: 1fr;
       }
       .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 32px;
       }
       .sim-summary-card {
         position: static;
         top: auto;
         margin-top: 24px;
-        padding: 24px 20px;
+        padding: 28px 22px;
+      }
+      /* Contact grid en colonne */
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .contact-info-card {
+        padding: 28px 24px;
+        gap: 20px;
+      }
+      .contact-form-card {
+        padding: 28px 24px;
+      }
+      /* Form : 2 colonnes -> 1 colonne */
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .form-full {
+        grid-column: 1 / -1;
       }
     }
 
+    /* --- 768px : Grand mobile --- */
     @media (max-width: 768px) {
       .hero-section {
         padding: 50px 0 35px;
@@ -2047,8 +2076,7 @@
         align-items: flex-start;
         gap: 10px;
       }
-
-      /* Horizontal scrollable tabs for portfolio */
+      /* Portfolio filtres scrollables */
       .portfolio-filters {
         display: flex;
         flex-wrap: nowrap;
@@ -2060,22 +2088,15 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
-      .portfolio-filters::-webkit-scrollbar {
-        display: none;
-      }
+      .portfolio-filters::-webkit-scrollbar { display: none; }
       .filter-btn {
         flex-shrink: 0;
         padding: 8px 16px;
         font-size: 0.85rem;
         white-space: nowrap;
       }
-
-      .project-card {
-        border-radius: var(--radius-md);
-      }
-      .project-banner {
-        height: 150px;
-      }
+      .project-card { border-radius: var(--radius-md); }
+      .project-banner { height: 150px; }
       .project-body {
         padding: 18px 16px;
         gap: 12px;
@@ -2088,8 +2109,6 @@
         width: 100%;
         justify-content: center;
       }
-
-      /* Floating pill inside hero showcase */
       .floating-card-pill {
         position: static;
         margin-top: 14px;
@@ -2100,11 +2119,14 @@
       }
     }
 
+    /* --- 640px : Mobile standard --- */
     @media (max-width: 640px) {
+      /* Container */
       .container {
         padding-left: 16px;
         padding-right: 16px;
       }
+      /* Header / Nav */
       .site-header {
         top: 10px;
         padding: 0 10px;
@@ -2122,71 +2144,48 @@
         height: 38px;
       }
 
-      /* Sections & Headers */
-      .section {
-        padding: 55px 0;
-      }
+      /* Sections */
+      .section { padding: 55px 0; }
       .section-header {
         margin-bottom: 30px;
         gap: 10px;
       }
       .section-header h2 {
         font-size: clamp(1.5rem, 5.5vw, 1.95rem);
+        word-break: break-word;
       }
-      .section-header p {
-        font-size: 0.95rem;
-      }
+      .section-header p { font-size: 0.95rem; }
 
-      /* Cards padding */
+      /* Cards */
       .service-card, .feature-card {
         padding: 22px 18px;
         border-radius: var(--radius-md);
       }
       .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-      .stat-card {
-        padding: 16px 18px;
-        border-radius: var(--radius-md);
-        gap: 14px;
-      }
-      .stat-icon {
-        width: 46px;
-        height: 46px;
-      }
-      .stat-number {
-        font-size: 1.5rem;
-      }
-
-      /* Showcase card */
-      .showcase-card {
-        padding: 16px 14px;
-        border-radius: var(--radius-md);
-      }
-      .mockup-kpi-grid {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
-      .mockup-kpi {
-        padding: 10px;
+      .stat-card {
+        padding: 16px 14px;
+        border-radius: var(--radius-md);
+        gap: 12px;
       }
-      .mockup-kpi-val {
-        font-size: 1.15rem;
-      }
-      .chart-bars {
-        height: 70px;
-        gap: 4px;
-      }
-      .bar-lbl {
-        font-size: 0.62rem;
-      }
-      .mockup-feed {
-        padding: 8px 10px;
-        font-size: 0.74rem;
-      }
+      .stat-icon { width: 42px; height: 42px; }
+      .stat-number { font-size: 1.4rem; }
+      .stat-label { font-size: 0.78rem; }
 
-      /* Simulator */
+      /* Showcase */
+      .showcase-card { padding: 16px 14px; border-radius: var(--radius-md); }
+      .mockup-kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .mockup-kpi { padding: 10px; }
+      .mockup-kpi-val { font-size: 1.15rem; }
+      .chart-bars { height: 70px; gap: 4px; }
+      .bar-lbl { font-size: 0.62rem; }
+      .mockup-feed { padding: 8px 10px; font-size: 0.74rem; }
+
+      /* ========================================
+         SIMULATEUR DE DEVIS
+         ======================================== */
       .sim-card {
         padding: 20px 14px;
         border-radius: var(--radius-md);
@@ -2197,6 +2196,17 @@
       }
       .project-type-card {
         padding: 14px;
+        overflow: hidden;
+        min-width: 0;
+      }
+      .project-type-card .pt-name {
+        word-break: break-word;
+        font-size: 0.95rem;
+      }
+      .project-type-card .pt-desc {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        font-size: 0.8rem;
       }
       .option-item {
         flex-direction: column;
@@ -2204,9 +2214,8 @@
         gap: 8px;
         padding: 12px 14px;
       }
-      .option-left {
-        width: 100%;
-      }
+      .option-left { width: 100%; }
+      .option-name { word-break: break-word; }
       .option-price-tag {
         margin-left: 36px;
         font-size: 0.85rem;
@@ -2220,6 +2229,8 @@
         grid-template-columns: 1fr;
         gap: 8px;
       }
+
+      /* Carte résumé devis */
       .sim-summary-card {
         padding: 20px 14px;
         border-radius: var(--radius-md);
@@ -2227,48 +2238,50 @@
       }
       .summary-list {
         overflow: hidden;
+        gap: 12px;
       }
+      /* Chaque ligne label/valeur : empilé verticalement */
       .summary-item {
-        flex-direction: column;
-        gap: 2px;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 2px !important;
         overflow: hidden;
         max-width: 100%;
       }
       .summary-item > :first-child,
       .summary-item > span:first-child {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        font-weight: 600;
-        max-width: 100%;
+        font-size: 0.73rem !important;
+        color: var(--text-muted) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        font-weight: 600 !important;
+        max-width: 100% !important;
       }
       .summary-item > strong,
-      .summary-item > :last-child:not(:first-child) {
-        text-align: left;
-        max-width: 100%;
-        font-size: 0.92rem;
-        color: var(--text-heading);
-        word-break: break-word;
-        overflow-wrap: anywhere;
+      .summary-item > :last-child {
+        text-align: left !important;
+        max-width: 100% !important;
+        font-size: 0.92rem !important;
+        color: var(--text-heading) !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
       }
+      /* Ligne total : empilé */
       .summary-item.total-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding-top: 16px;
-        margin-top: 12px;
-        overflow: hidden;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding-top: 16px !important;
+        margin-top: 12px !important;
       }
       .price-box {
-        text-align: left;
-        width: 100%;
-        overflow: hidden;
+        text-align: left !important;
+        width: 100% !important;
       }
       .total-price-val {
-        font-size: 1.4rem;
-        word-break: break-word;
-        overflow-wrap: anywhere;
+        font-size: 1.5rem !important;
+        word-break: break-word !important;
+        white-space: normal !important;
       }
       .total-price-eur {
         font-size: 0.82rem;
@@ -2280,30 +2293,33 @@
         gap: 4px;
       }
 
-      /* Founder Card */
+      /* ========================================
+         FONDATEUR
+         ======================================== */
       .founder-card {
         padding: 24px 16px;
         border-radius: var(--radius-lg);
         gap: 20px;
       }
       .founder-avatar-wrap {
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         border-radius: var(--radius-lg);
       }
-      .founder-bio h2 {
-        font-size: 1.35rem;
-      }
+      .founder-bio h2 { font-size: 1.3rem; }
       .founder-skills {
         justify-content: flex-start;
         gap: 6px;
+        flex-wrap: wrap;
       }
       .skill-pill {
         font-size: 0.75rem;
         padding: 4px 10px;
       }
 
-      /* FAQ */
+      /* ========================================
+         FAQ
+         ======================================== */
       .faq-question {
         padding: 16px 18px;
         font-size: 0.95rem;
@@ -2314,28 +2330,160 @@
         font-size: 0.88rem;
         line-height: 1.6;
       }
-      .faq-icon {
-        width: 28px;
-        height: 28px;
+      .faq-icon { width: 28px; height: 28px; }
+
+      /* ========================================
+         CONTACT — NOS COORDONNÉES DIRECTES
+         ======================================== */
+      .contact-info-card {
+        padding: 22px 16px;
+        border-radius: var(--radius-md);
+        gap: 18px;
+      }
+      .contact-info-card h3 {
+        font-size: 1.25rem;
+        word-break: break-word;
+      }
+      .contact-info-card > p {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+      .contact-channels {
+        gap: 14px;
+      }
+      .channel-item {
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .channel-icon {
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .channel-text {
+        min-width: 0;
+        overflow: hidden;
+      }
+      .channel-label {
+        font-size: 0.73rem;
+        white-space: normal;
+        word-break: break-word;
+      }
+      .channel-value {
+        font-size: 0.92rem;
+        word-break: break-all;
+        overflow-wrap: anywhere;
+        color: var(--text-heading);
+      }
+      /* Bouton WhatsApp pleine largeur */
+      .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 14px 18px;
+        font-size: 0.92rem;
+        border-radius: var(--radius-md);
       }
 
-      /* Contact Form */
-      .contact-info-card, .contact-form-card {
-        padding: 24px 16px;
+      /* ========================================
+         CONTACT — FORMULAIRE "ENVOYEZ-NOUS UN MESSAGE"
+         ======================================== */
+      .contact-form-card {
+        padding: 22px 16px;
         border-radius: var(--radius-md);
+      }
+      .contact-form-card h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 16px !important;
+        word-break: break-word;
       }
       .form-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
       }
-      .form-input, .form-select, .form-textarea {
-        font-size: 16px; /* Prevents auto-zoom on iOS Safari */
-        padding: 12px 14px;
+      .form-group {
+        gap: 6px;
+      }
+      .form-group label {
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .form-input,
+      .form-select,
+      .form-textarea {
+        font-size: 16px; /* Empêche le zoom iOS */
+        padding: 13px 14px;
+        border-radius: 12px;
+      }
+      .form-textarea {
+        min-height: 110px;
+      }
+      .checkbox-label {
+        font-size: 0.83rem;
+        align-items: flex-start;
+        gap: 10px;
+        line-height: 1.5;
+      }
+      /* Bouton Envoyer pleine largeur */
+      .form-group[style*="display:flex"] {
+        flex-direction: column !important;
+      }
+      .contact-form-card button[type="submit"],
+      .contact-form-card .btn-primary {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 15px 20px !important;
+        font-size: 0.97rem !important;
+        border-radius: 12px !important;
       }
 
-      /* Modals */
-      .modal-backdrop {
-        padding: 12px;
+      /* ========================================
+         FOOTER
+         ======================================== */
+      .site-footer {
+        padding: 50px 0 24px;
       }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-bottom: 32px;
+      }
+      .footer-brand p {
+        max-width: 100%;
+        font-size: 0.88rem;
+      }
+      .footer-col h4 {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+      }
+      .footer-links {
+        gap: 8px;
+      }
+      .footer-links a,
+      .footer-links span {
+        font-size: 0.88rem;
+        word-break: break-word;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        font-size: 0.8rem;
+      }
+
+      /* ========================================
+         FAB WHATSAPP + MODALS
+         ======================================== */
+      .fab-whatsapp {
+        padding: 12px;
+        bottom: 18px;
+        right: 18px;
+        border-radius: 50%;
+      }
+      .fab-whatsapp span { display: none; }
+      .modal-backdrop { padding: 12px; }
       .modal-card {
         padding: 24px 16px;
         border-radius: var(--radius-lg);
@@ -2347,311 +2495,35 @@
         width: 32px;
         height: 32px;
       }
-
-      /* Floating WhatsApp FAB */
-      .fab-whatsapp {
-        padding: 12px;
-        bottom: 18px;
-        right: 18px;
-        border-radius: 50%;
-      }
-      .fab-whatsapp span {
-        display: none;
-      }
-
-      /* Footer */
-      .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
     }
 
-    /* ========================================================
-       MOBILE FIXES — Pass 2 (responsive extras)
-       ======================================================== */
-
-    /* Prevent horizontal overflow globally */
-    html, body {
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    img, video, iframe, embed, object {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Mobile menu drawer */
-    .mobile-nav-drawer {
-      max-width: 100vw;
-      overflow-x: hidden;
-    }
-
-    /* Devis simulator — options list */
-    .options-list {
-      overflow: hidden;
-    }
-    .option-item {
-      min-width: 0;
-      overflow: hidden;
-    }
-    .option-label {
-      min-width: 0;
-      overflow: hidden;
-    }
-    .option-name {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-      min-width: 0;
-    }
-    .option-desc {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-      min-width: 0;
-    }
-
-    /* Project type cards — prevent all text overflow */
-    .project-type-card {
-      overflow: hidden;
-      min-width: 0;
-    }
-    .project-type-card .pt-icon {
-      flex-shrink: 0;
-    }
-    .project-type-card .pt-name {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-    .project-type-card .pt-desc {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-    .project-type-card .pt-price {
-      word-break: break-word;
-    }
-
-    /* Summary card — all children */
-    .sim-summary-card {
-      min-width: 0;
-      overflow: hidden;
-    }
-    .summary-item {
-      min-width: 0;
-      max-width: 100%;
-    }
-    .summary-item > span {
-      min-width: 0;
-      word-break: break-word;
-    }
-    .summary-item > strong {
-      min-width: 0;
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-
-    /* Hero section — prevent overflow */
-    .hero-section {
-      overflow-x: hidden;
-    }
-    .hero-showcase {
-      min-width: 0;
-      overflow: hidden;
-    }
-    .showcase-card {
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    /* Section titles — no overflow */
-    .section-header h2 {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
-
-    /* Service cards */
-    .service-card {
-      min-width: 0;
-      overflow: hidden;
-    }
-    .service-card h3 {
-      word-break: break-word;
-    }
-    .service-card p {
-      word-break: break-word;
-    }
-
-    /* Contact info */
-    .contact-info-item a,
-    .contact-info-item span {
-      word-break: break-all;
-      overflow-wrap: anywhere;
-      min-width: 0;
-    }
-
-    /* Stats */
-    .stat-card {
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    /* Portfolio cards */
-    .project-card {
-      min-width: 0;
-      overflow: hidden;
-    }
-    .project-tags {
-      flex-wrap: wrap;
-    }
-
+    /* --- 480px : Très petits mobiles --- */
     @media (max-width: 480px) {
-      /* Extra small phones */
       .hero-content h1 {
-        font-size: clamp(1.6rem, 8vw, 2.1rem);
-        line-height: 1.15;
+        font-size: clamp(1.55rem, 8vw, 2rem);
       }
       .brand-logo-img {
         height: 30px;
         max-width: 120px;
       }
-      .section-eyebrow {
-        font-size: 0.72rem;
-      }
       .section-header h2 {
-        font-size: clamp(1.35rem, 6.5vw, 1.8rem);
+        font-size: clamp(1.3rem, 7vw, 1.7rem);
       }
-      .btn-lg {
-        font-size: 0.9rem;
-        padding: 12px 18px;
-      }
-      .services-grid {
+      .stats-grid {
         grid-template-columns: 1fr;
-      }
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-      .project-types-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-      .project-type-card {
-        padding: 12px;
-      }
-      .sim-card {
-        padding: 16px 12px;
-      }
-      .sim-summary-card {
-        padding: 16px 12px;
       }
       .total-price-val {
-        font-size: 1.3rem;
+        font-size: 1.3rem !important;
       }
-      .mockup-kpi-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
+      .contact-info-card h3,
+      .contact-form-card h3 {
+        font-size: 1.15rem !important;
       }
-      .contact-info-card, .contact-form-card {
-        padding: 20px 14px;
-      }
-      .footer-nav-col h4 {
+      .channel-value {
         font-size: 0.88rem;
       }
-      .option-price-tag {
-        margin-left: 0;
-      }
-      .delay-grid {
-        grid-template-columns: 1fr;
-      }
-      .founder-skills {
-        gap: 5px;
-      }
-      .skill-pill {
-        font-size: 0.72rem;
-        padding: 3px 8px;
-      }
-    }
-
-
-    /* ========================================================
-       MOBILE FIXES — Pass 4 (contact form + FAB)
-       ======================================================== */
-
-    /* Contact form submit button - full width on mobile */
-    .form-submit-btn {
-      width: 100%;
-      justify-content: center;
-      padding: 14px 24px;
-    }
-
-    /* Padding bottom sur body pour que FAB ne cache pas le contenu */
-    @media (max-width: 860px) {
-      body {
-        padding-bottom: 80px;
-      }
-      /* Consent checkbox text wrap */
-      .form-consent {
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .form-consent label {
-        font-size: 0.85rem;
-        line-height: 1.5;
-      }
-      /* Form submit full width */
-      .contact-form-card .btn-primary {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-      }
-      /* Prevent hero section overflow */
-      .hero-grid {
-        overflow: hidden;
-      }
-    }
-
-    @media (max-width: 640px) {
-      /* Ajustements formulaire */
-      .form-group {
-        gap: 6px;
-      }
-      .form-label {
-        font-size: 0.88rem;
-      }
-      .form-input, .form-select, .form-textarea {
-        padding: 12px 14px;
-        font-size: 16px;
-        border-radius: 10px;
-      }
-      .form-textarea {
-        min-height: 110px;
-      }
-      /* Bouton submit */
-      .contact-form-card .btn-primary,
-      .form-submit-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 15px 20px;
-        font-size: 0.97rem;
-        border-radius: 12px;
-      }
-      /* Contact info card */
-      .contact-info-item {
-        gap: 12px;
-        align-items: flex-start;
-      }
-      .contact-info-icon {
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-      /* Social links */
-      .social-links {
-        flex-wrap: wrap;
-        gap: 8px;
+      .footer-grid {
+        gap: 22px;
       }
     }
 
