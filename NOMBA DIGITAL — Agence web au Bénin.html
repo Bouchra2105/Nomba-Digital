@@ -1283,6 +1283,21 @@
       gap: 10px;
       margin-bottom: 40px;
     }
+    /* Wrapper pour le scroll horizontal mobile */
+    .portfolio-filters-wrap {
+      position: relative;
+    }
+    .portfolio-filters-wrap::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 48px;
+      height: 100%;
+      background: linear-gradient(to right, transparent, var(--bg-body));
+      pointer-events: none;
+      display: none;
+    }
     .filter-btn {
       padding: 10px 20px;
       border-radius: var(--radius-full);
@@ -1429,8 +1444,14 @@
       font-size: 0.82rem;
       color: var(--text-muted);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    .project-features li svg {
+      flex-shrink: 0;
+      margin-top: 1px;
     }
     .project-features li svg {
       width: 14px;
@@ -2082,30 +2103,59 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         justify-content: flex-start;
-        padding: 4px 4px 12px 4px;
-        margin-bottom: 24px;
+        padding: 4px 0px 14px 0px;
+        margin-bottom: 20px;
         gap: 8px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        /* Fade sur la droite via mask */
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
       }
       .portfolio-filters::-webkit-scrollbar { display: none; }
       .filter-btn {
         flex-shrink: 0;
-        padding: 8px 16px;
-        font-size: 0.85rem;
+        padding: 9px 18px;
+        font-size: 0.87rem;
         white-space: nowrap;
       }
       .project-card { border-radius: var(--radius-md); }
-      .project-banner { height: 150px; }
+      .project-banner { height: 145px; }
       .project-body {
-        padding: 18px 16px;
+        padding: 18px 16px 18px 16px;
         gap: 12px;
+      }
+      .project-title {
+        font-size: 1.1rem;
+        word-break: break-word;
+      }
+      .project-desc {
+        font-size: 0.87rem;
+        line-height: 1.55;
+        word-break: break-word;
+      }
+      .project-features {
+        gap: 8px;
+      }
+      .project-features li {
+        font-size: 0.82rem;
+        gap: 8px;
+        align-items: flex-start;
+        word-break: break-word;
       }
       .project-actions {
         flex-direction: column;
         gap: 8px;
+        padding-top: 12px;
+        margin-top: 10px;
       }
       .project-actions .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+      /* Bouton portfolio complet - pleine largeur */
+      #realisations .btn-lg {
         width: 100%;
         justify-content: center;
       }
@@ -2182,6 +2232,82 @@
       .chart-bars { height: 70px; gap: 4px; }
       .bar-lbl { font-size: 0.62rem; }
       .mockup-feed { padding: 8px 10px; font-size: 0.74rem; }
+
+      /* ========================================
+         PORTFOLIO — MOBILE
+         ======================================== */
+      #realisations {
+        padding-bottom: 24px;
+      }
+      .portfolio-grid {
+        gap: 18px;
+      }
+      #realisations div[style*="text-align:center"] {
+        margin-top: 22px !important;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      /* Bouton Explorer le portfolio complet du fondateur */
+      #realisations .btn-lg,
+      #realisations div[style*="text-align:center"] .btn {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 13px 18px !important;
+        font-size: 0.92rem !important;
+        line-height: 1.35 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        gap: 8px !important;
+        border-radius: var(--radius-full) !important;
+      }
+      #realisations .btn-lg span,
+      #realisations div[style*="text-align:center"] .btn span {
+        white-space: normal !important;
+        word-break: break-word !important;
+        text-align: center !important;
+        flex: 1;
+      }
+      #realisations .btn-lg svg,
+      #realisations div[style*="text-align:center"] .btn svg {
+        flex-shrink: 0 !important;
+      }
+
+      /* ========================================
+         POURQUOI NOUS CHOISIR (AVANTAGES) — MOBILE
+         ======================================== */
+      #avantages {
+        padding-top: 28px;
+        padding-bottom: 45px;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .feature-card {
+        padding: 20px 16px;
+        border-radius: var(--radius-md);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .feature-icon {
+        width: 44px;
+        height: 44px;
+      }
+      .feature-card h3 {
+        font-size: 1.08rem;
+        line-height: 1.35;
+        word-break: break-word;
+      }
+      .feature-card p {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
 
       /* ========================================
          SIMULATEUR DE DEVIS
@@ -2477,12 +2603,23 @@
          FAB WHATSAPP + MODALS
          ======================================== */
       .fab-whatsapp {
-        padding: 12px;
+        width: 46px;
+        height: 46px;
+        padding: 0;
         bottom: 18px;
-        right: 18px;
+        right: 16px;
         border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(1, 181, 116, 0.45);
       }
-      .fab-whatsapp span { display: none; }
+      .fab-whatsapp svg {
+        width: 22px;
+        height: 22px;
+      }
+      .fab-whatsapp span { display: none !important; }
+      .fab-pulse-ring { display: none !important; }
       .modal-backdrop { padding: 12px; }
       .modal-card {
         padding: 24px 16px;
